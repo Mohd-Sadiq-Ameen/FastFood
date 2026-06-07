@@ -61,10 +61,10 @@ export default function DeliveryChecker() {
               <MapPin className="w-8 h-8 text-gbgreen" />
             </div>
             <h2 className="font-syne font-extrabold text-3xl sm:text-4xl text-gbblack">
-              Delivery Check
+              Delivery Check 
             </h2>
             <p className="font-dm text-gray-500 mt-3 max-w-md mx-auto">
-              Enter your area – we&apos;ll instantly tell you if we deliver to you.            </p>
+              Enter your area – we&apos;ll instantly tell you if we deliver to you. <br /> <span className='text-red-600' >Currently Limited Areas Only  </span>          </p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3">

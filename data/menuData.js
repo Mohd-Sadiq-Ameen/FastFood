@@ -25,22 +25,7 @@ const pizzas = [
     emoji: '🍕',
     color: '#FEF3C7',
   },
-  {
-    slug: 'paneer-tikka-pizza',
-    name: 'Paneer Tikka Pizza',
-    category: 'pizza',
-    price: 279,
-    originalPrice: 299,
-    description: 'Spicy paneer tikka, onions, capsicum and mint chutney.',
-    tagline: 'Indian flavours on a crispy crust',
-    ingredients: ['Pizza dough', 'Paneer tikka', 'Onions', 'Capsicum', 'Mint chutney', 'Mozzarella'],
-    nutrition: { calories: 680, protein: '28g', fat: '22g', carbs: '88g', fiber: '4g' },
-    protein: '28g',
-    badge: 'Chef Special',
-    image: '/paneer-tikka.png',
-    emoji: '🧀',
-    color: '#FCE7F3',
-  },
+ 
   {
     slug: 'bbq-chicken-pizza',
     name: 'BBQ Chicken Pizza',
