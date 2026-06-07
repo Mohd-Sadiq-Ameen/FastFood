@@ -8,6 +8,7 @@ export default function QRCodeSection({ isPage = false }) {
   const [copiedUpi, setCopiedUpi] = useState(false);
   const [copiedNumber, setCopiedNumber] = useState(false);
 
+  // Form state
   const [form, setForm] = useState({
     name: '',
     phone: '',
@@ -125,8 +126,7 @@ Please confirm and deliver within 30 mins.`;
           <div className="bg-white border border-gray-100 rounded-2xl shadow-sm p-6">
             <h3 className="font-syne font-bold text-xl text-gbblack mb-4">Place Your Order</h3>
             <p className="text-sm text-gray-500 mb-4">
-              Fill in your details, then click confirm. You'll be redirected to WhatsApp with a pre‑filled message.
-              After payment, send the screenshot – we'll deliver within 30 minutes.
+              Fill in your details, then click confirm. You will be redirected to WhatsApp with a pre-filled message. After payment, send the screenshot – we will deliver within 30 minutes.
             </p>
 
             <div className="space-y-4">
@@ -188,7 +188,7 @@ Please confirm and deliver within 30 mins.`;
             </div>
 
             <div className="mt-6 text-xs text-gray-400 text-center border-t pt-4">
-              <p>After payment, send the screenshot on WhatsApp. We'll confirm and deliver in under 30 mins.</p>
+              <p>After payment, send the screenshot on WhatsApp. We will confirm and deliver in under 30 mins.</p>
             </div>
           </div>
         </div>
