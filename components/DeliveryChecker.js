@@ -64,8 +64,7 @@ export default function DeliveryChecker() {
               Delivery Check
             </h2>
             <p className="font-dm text-gray-500 mt-3 max-w-md mx-auto">
-              Enter your area – we'll instantly tell you if we deliver to you.
-            </p>
+              Enter your area – we&apos;ll instantly tell you if we deliver to you.            </p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3">
@@ -112,7 +111,7 @@ export default function DeliveryChecker() {
                     Not Available Yet
                   </div>
                   <p className="mt-2 font-dm text-red-700">
-                    Sorry, we don't currently deliver to "{result.query}".
+                    Sorry, we don&apos;t currently deliver to &quot;{result.query}&quot;.
                   </p>
                   <div className="mt-4 pt-4 border-t border-red-100">
                     <p className="text-sm text-gray-600 mb-3">
