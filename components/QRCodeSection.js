@@ -128,73 +128,75 @@ Please confirm and deliver within 30 mins.`;
                         <p className="text-sm text-gray-500 mb-4">
                             Fill in your details, then click confirm. You&apos;ll be redirected to WhatsApp with a pre-filled message.              After payment, send the screenshot – we&apos;ll deliver within 30 minutes.
 
-                        <div className="space-y-4">
-                            <div>
-                                <label className="block text-sm font-dm font-medium text-gray-700 mb-1">Full Name *</label>
-                                <input
-                                    type="text"
-                                    name="name"
-                                    value={form.name}
-                                    onChange={handleChange}
-                                    className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gbgreen"
-                                    placeholder="John Doe"
-                                    required
-                                />
-                            </div>
-                            <div>
-                                <label className="block text-sm font-dm font-medium text-gray-700 mb-1">Phone Number *</label>
-                                <input
-                                    type="tel"
-                                    name="phone"
-                                    value={form.phone}
-                                    onChange={handleChange}
-                                    className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gbgreen"
-                                    placeholder="9876543210"
-                                    required
-                                />
-                            </div>
-                            <div>
-                                <label className="block text-sm font-dm font-medium text-gray-700 mb-1">Delivery Address *</label>
-                                <textarea
-                                    name="address"
-                                    value={form.address}
-                                    onChange={handleChange}
-                                    rows="2"
-                                    className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gbgreen"
-                                    placeholder="House No., Street, Landmark, City"
-                                    required
-                                />
-                            </div>
-                            <div>
-                                <label className="block text-sm font-dm font-medium text-gray-700 mb-1">What would you like to order? *</label>
-                                <textarea
-                                    name="orderDetails"
-                                    value={form.orderDetails}
-                                    onChange={handleChange}
-                                    rows="2"
-                                    className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gbgreen"
-                                    placeholder="e.g., 1x Margherita Pizza, 1x Veg Burger, 1x Small Catch Cola"
-                                    required
-                                />
+                            <div className="space-y-4">
+                                <div>
+                                    <label className="block text-sm font-dm font-medium text-gray-700 mb-1">Full Name *</label>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        value={form.name}
+                                        onChange={handleChange}
+                                        className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gbgreen"
+                                        placeholder="John Doe"
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-dm font-medium text-gray-700 mb-1">Phone Number *</label>
+                                    <input
+                                        type="tel"
+                                        name="phone"
+                                        value={form.phone}
+                                        onChange={handleChange}
+                                        className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gbgreen"
+                                        placeholder="9876543210"
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-dm font-medium text-gray-700 mb-1">Delivery Address *</label>
+                                    <textarea
+                                        name="address"
+                                        value={form.address}
+                                        onChange={handleChange}
+                                        rows="2"
+                                        className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gbgreen"
+                                        placeholder="House No., Street, Landmark, City"
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-dm font-medium text-gray-700 mb-1">What would you like to order? *</label>
+                                    <textarea
+                                        name="orderDetails"
+                                        value={form.orderDetails}
+                                        onChange={handleChange}
+                                        rows="2"
+                                        className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gbgreen"
+                                        placeholder="e.g., 1x Margherita Pizza, 1x Veg Burger, 1x Small Catch Cola"
+                                        required
+                                    />
+                                </div>
+
+                                <button
+                                    onClick={handleSubmitOrder}
+                                    className="w-full bg-gbgreen hover:bg-green-600 text-white font-syne font-bold py-3 rounded-full transition-all duration-300 shadow-md mt-2"
+                                >
+                                    Confirm Order on WhatsApp →
+                                </button>
                             </div>
 
-                            <button
-                                onClick={handleSubmitOrder}
-                                className="w-full bg-gbgreen hover:bg-green-600 text-white font-syne font-bold py-3 rounded-full transition-all duration-300 shadow-md mt-2"
-                            >
-                                Confirm Order on WhatsApp →
-                            </button>
-                        </div>
+                            <div className="mt-6 text-xs text-gray-400 text-center border-t pt-4">
+                                <p>
+                                    After payment, send the screenshot on WhatsApp. We&apos;ll confirm and deliver in under 30 mins.
+                                </p>
+                            </div>
+                    </div>
 
-                        <div className="mt-6 text-xs text-gray-400 text-center border-t pt-4">
-                            After payment, send the screenshot on WhatsApp. After payment, send the screenshot on WhatsApp. We&apos;ll confirm and deliver in under 30 mins.
+                    <div className="mt-12 text-center text-sm text-gray-400 border-t pt-6">
+                        <p>🔒 Secure payment – we never store your card or UPI details.</p>
                     </div>
                 </div>
-
-                <div className="mt-12 text-center text-sm text-gray-400 border-t pt-6">
-                    <p>🔒 Secure payment – we never store your card or UPI details.</p>
-                </div>
-            </div>
         </section>
     );
 }
