@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import HomeMenuSection from '@/components/HomeMenuSection';
+import QRCodeSection from '@/components/QRCodeSection';
+import DeliveryChecker from '@/components/DeliveryChecker';
 
 export const metadata = {
   title: 'GreenBite | Fresh Pizza, Juicy Burgers & Ice Cold Campa – Delivered Fast',
@@ -106,8 +108,12 @@ export default function HomePage() {
         </div>
       </div>
 
+      <DeliveryChecker />
+
       {/* Featured Menu Section – shows first 6 bestsellers */}
       <HomeMenuSection featuredOnly={true} maxItems={6} />
+
+
 
       {/* Why GreenBite */}
       <section className="bg-gbgray py-14 sm:py-16">
@@ -239,25 +245,7 @@ export default function HomePage() {
       </section>
 
       {/* Final CTA Banner */}
-      <section className="bg-gbgreen py-14 sm:py-16 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center relative z-10">
-          <p className="font-syne font-extrabold text-3xl sm:text-4xl text-white mb-3">
-            Hungry? Order in 3 taps.
-          </p>
-          <p className="font-dm text-green-100 mb-8 text-base sm:text-lg">
-            No account. No app. Just WhatsApp us and we'll handle the rest.
-          </p>
-          <a
-            href="https://wa.me/918700629458?text=Hi%20GreenBite!%20I%20want%20to%20place%20an%20order%20%F0%9F%8D%95"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-gbyellow hover:bg-yellow-400 active:scale-95 text-gbblack font-syne font-extrabold text-base sm:text-lg px-8 py-4 rounded-full shadow-lg transition-all duration-200"
-          >
-            <WhatsAppIcon className="w-6 h-6" />
-            Order on WhatsApp Now
-          </a>
-        </div>
-      </section>
+      <QRCodeSection />
     </>
   );
 }

@@ -11,12 +11,11 @@ export default function Navbar() {
   const links = [
     { href: '/', label: 'Home' },
     { href: '/menu', label: 'Menu' },
-    { href: '/about', label: 'About' },
-    { href: '/contact', label: 'Contact' },
+    { href: '/payment', label: 'Payment' },
   ];
 
   return (
-    <header className="sticky top-0 z-50 pt-2 sm:pt-3 md:pt-4">
+    <header className="sticky top-0 z-50">
       {/* Top Offer Bar */}
       <div className="bg-gradient-to-r from-gbgreen to-green-600 text-white text-center py-2 sm:py-2.5 text-xs sm:text-sm md:text-base font-medium px-2 truncate">
         🚚 Free Delivery Above ₹299 – Order Now!
@@ -24,23 +23,8 @@ export default function Navbar() {
 
       {/* Floating Navbar Container */}
       <div className="max-w-7xl mx-auto px-3 sm:px-5 lg:px-8 mt-1 sm:mt-2">
-        <div className="
-          bg-white/95
-          backdrop-blur-md
-          rounded-2xl
-          sm:rounded-3xl
-          shadow-[0_8px_30px_rgb(0,0,0,0.08)]
-          border
-          border-white/20
-          px-3
-          sm:px-5
-          lg:px-8
-          py-2
-          sm:py-3
-          flex
-          items-center
-        ">
-          {/* Logo – fixed size, no flex growth */}
+        <div className="bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-white/20 px-3 sm:px-5 lg:px-8 py-2 sm:py-3 flex items-center">
+          {/* Logo */}
           <Link href="/" className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             <span className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gbgreen flex items-center justify-center text-white font-syne font-extrabold text-lg sm:text-xl leading-none shadow-md">
               G
@@ -50,18 +34,8 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* Desktop Navigation – centered using flex-1 + justify-center */}
-          <nav className="
-            hidden md:flex
-            items-center
-            flex-1
-            justify-center
-            gap-8
-            lg:gap-12
-            xl:gap-16
-            px-6
-            lg:px-10
-          ">
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center flex-1 justify-center gap-8 lg:gap-12 xl:gap-16 px-6 lg:px-10">
             {links.map(({ href, label }) => {
               const isActive = path === href;
               return (
@@ -80,27 +54,13 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* CTA Button – shrink-0, properly sized for tablet */}
+          {/* CTA Button */}
           <div className="hidden md:flex items-center gap-3 shrink-0">
             <Link
               href="/menu"
-              className="
-                bg-gbgreen
-                hover:scale-105
-                hover:shadow-xl
-                rounded-full
-                font-bold
-                text-white
-                transition-all
-                duration-300
-                active:scale-95
-                shadow-md
-                px-4 py-2 text-sm
-                lg:px-5 lg:py-2.5 lg:text-sm
-                xl:px-7 xl:py-3 xl:text-base
-              "
+              className="bg-gbgreen hover:scale-105 hover:shadow-xl rounded-full font-bold text-white transition-all duration-300 active:scale-95 shadow-md px-4 py-2 text-sm lg:px-5 lg:py-2.5 lg:text-sm xl:px-7 xl:py-3 xl:text-base"
             >
-              Order Now 🛒
+              Order Now
             </Link>
           </div>
 
@@ -137,7 +97,7 @@ export default function Navbar() {
             onClick={() => setOpen(false)}
             className="block w-full text-center bg-gbgreen text-white font-dm font-semibold py-3 sm:py-3.5 rounded-full mt-2 shadow-md text-base sm:text-lg"
           >
-            Order Now 🛒
+            Order Now
           </Link>
         </div>
       )}

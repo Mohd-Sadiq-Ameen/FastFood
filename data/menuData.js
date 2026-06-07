@@ -7,7 +7,7 @@ export const categories = [
   { id: 'meals', label: 'Value Meals', emoji: '🔥' },
 ];
 
-// ---------- PIZZA (4 items) ----------
+// ---------- PIZZA ----------
 const pizzas = [
   {
     slug: 'margherita-pizza',
@@ -16,15 +16,31 @@ const pizzas = [
     price: 199,
     originalPrice: null,
     description: 'Classic cheese and tomato sauce on a thin crust.',
+    tagline: 'Simple, cheesy, and delicious',
     ingredients: ['Pizza dough', 'Tomato sauce', 'Mozzarella cheese', 'Fresh basil', 'Olive oil'],
-    nutrition: { calories: 620, protein: '22g', fat: '18g', carbs: '85g' },
+    nutrition: { calories: 620, protein: '22g', fat: '18g', carbs: '85g', fiber: '3g' },
     protein: '22g',
     badge: 'Best Seller',
-    image: '/margherita.png',            // fixed path & extension
+    image: '/margherita.png',
     emoji: '🍕',
     color: '#FEF3C7',
   },
- 
+  {
+    slug: 'paneer-tikka-pizza',
+    name: 'Paneer Tikka Pizza',
+    category: 'pizza',
+    price: 279,
+    originalPrice: 299,
+    description: 'Spicy paneer tikka, onions, capsicum and mint chutney.',
+    tagline: 'Indian flavours on a crispy crust',
+    ingredients: ['Pizza dough', 'Paneer tikka', 'Onions', 'Capsicum', 'Mint chutney', 'Mozzarella'],
+    nutrition: { calories: 680, protein: '28g', fat: '22g', carbs: '88g', fiber: '4g' },
+    protein: '28g',
+    badge: 'Chef Special',
+    image: '/paneer-tikka.png',
+    emoji: '🧀',
+    color: '#FCE7F3',
+  },
   {
     slug: 'bbq-chicken-pizza',
     name: 'BBQ Chicken Pizza',
@@ -32,11 +48,12 @@ const pizzas = [
     price: 329,
     originalPrice: 359,
     description: 'Grilled chicken, BBQ sauce, red onions and coriander.',
+    tagline: 'Smoky, tangy, and loaded with chicken',
     ingredients: ['Pizza dough', 'BBQ sauce', 'Grilled chicken', 'Red onions', 'Coriander', 'Mozzarella'],
-    nutrition: { calories: 720, protein: '32g', fat: '24g', carbs: '90g' },
+    nutrition: { calories: 720, protein: '32g', fat: '24g', carbs: '90g', fiber: '3g' },
     protein: '32g',
     badge: 'Spicy',
-    image: '/bbq-chicken.png',           // fixed
+    image: '/bbq-chicken.png',
     emoji: '🍗',
     color: '#FEE2E2',
   },
@@ -47,17 +64,18 @@ const pizzas = [
     price: 379,
     originalPrice: 399,
     description: 'Loaded with chicken sausage, grilled chicken, bell peppers and onions.',
+    tagline: 'The ultimate meat lovers pizza',
     ingredients: ['Pizza dough', 'Tomato sauce', 'Chicken sausage', 'Grilled chicken', 'Bell peppers', 'Onions', 'Mozzarella'],
-    nutrition: { calories: 790, protein: '38g', fat: '28g', carbs: '92g' },
+    nutrition: { calories: 790, protein: '38g', fat: '28g', carbs: '92g', fiber: '4g' },
     protein: '38g',
     badge: 'Ultimate',
-    image: '/chicken-supreme.png',       // fixed
+    image: '/chicken-supreme.png',
     emoji: '🐔',
     color: '#FEF9C3',
   },
 ];
 
-// ---------- BURGERS (2 items) ----------
+// ---------- BURGERS ----------
 const burgers = [
   {
     slug: 'veg-burger',
@@ -66,11 +84,12 @@ const burgers = [
     price: 129,
     originalPrice: 149,
     description: 'Crispy veg patty, lettuce, tomato, onion and special sauce.',
+    tagline: 'Crunchy, fresh, and satisfying',
     ingredients: ['Veg patty', 'Lettuce', 'Tomato', 'Onion', 'Special sauce', 'Brioche bun'],
-    nutrition: { calories: 450, protein: '12g', fat: '16g', carbs: '62g' },
+    nutrition: { calories: 450, protein: '12g', fat: '16g', carbs: '62g', fiber: '5g' },
     protein: '12g',
     badge: 'Popular',
-    image: '/veg-burger.png',            // fixed
+    image: '/veg-burger.png',
     emoji: '🍔',
     color: '#E0F2FE',
   },
@@ -81,17 +100,18 @@ const burgers = [
     price: 179,
     originalPrice: 199,
     description: 'Crispy fried chicken patty, lettuce, mayo and pickles.',
+    tagline: 'Juicy, crispy, and packed with flavour',
     ingredients: ['Chicken patty', 'Lettuce', 'Mayonnaise', 'Pickles', 'Sesame bun'],
-    nutrition: { calories: 520, protein: '22g', fat: '20g', carbs: '58g' },
+    nutrition: { calories: 520, protein: '22g', fat: '20g', carbs: '58g', fiber: '3g' },
     protein: '22g',
     badge: 'Hot Seller',
-    image: '/chicken-burger.png',        // fixed
+    image: '/chicken-burger.png',
     emoji: '🍔',
     color: '#FEE2E2',
   },
 ];
 
-// ---------- DRINKS (2 items) – Catch Cola ----------
+// ---------- DRINKS ----------
 const drinks = [
   {
     slug: 'catch-cola-small',
@@ -100,11 +120,12 @@ const drinks = [
     price: 49,
     originalPrice: 59,
     description: '250ml classic Catch Cola – crisp and refreshing.',
+    tagline: 'The perfect partner for your meal',
     ingredients: ['Carbonated water', 'Sugar', 'Caffeine', 'Natural flavors'],
-    nutrition: { calories: 105, protein: '0g', fat: '0g', carbs: '27g' },
+    nutrition: { calories: 105, protein: '0g', fat: '0g', carbs: '27g', fiber: '0g' },
     protein: '0g',
     badge: 'Chilled',
-    image: '/catch-cola-small.png',      // fixed
+    image: '/catch-cola-small.png',
     emoji: '🥤',
     color: '#D1FAE5',
   },
@@ -115,17 +136,18 @@ const drinks = [
     price: 79,
     originalPrice: 99,
     description: '500ml Catch Cola – extra fizz, extra chill.',
+    tagline: 'Double the fun, double the fizz',
     ingredients: ['Carbonated water', 'Sugar', 'Caffeine', 'Natural flavors'],
-    nutrition: { calories: 210, protein: '0g', fat: '0g', carbs: '54g' },
+    nutrition: { calories: 210, protein: '0g', fat: '0g', carbs: '54g', fiber: '0g' },
     protein: '0g',
     badge: 'Best Value',
-    image: '/catch-cola-large.png',      // fixed
+    image: '/catch-cola-large.png',
     emoji: '🥤',
     color: '#D1FAE5',
   },
 ];
 
-// ---------- VALUE MEALS (combo meals) ----------
+// ---------- VALUE MEALS ----------
 const meals = [
   {
     slug: 'burger-cola',
@@ -134,11 +156,12 @@ const meals = [
     price: 169,
     originalPrice: 199,
     description: 'Any burger + Small Catch Cola. Save ₹30!',
+    tagline: 'Classic combo for a quick bite',
     ingredients: ['Burger of your choice', 'Small Catch Cola'],
-    nutrition: { calories: '~550', protein: '~12g', fat: '~16g', carbs: '~89g' },
+    nutrition: { calories: '~550', protein: '~12g', fat: '~16g', carbs: '~89g', fiber: '~4g' },
     protein: 'Combo',
     badge: 'Save ₹30',
-    image: '/burger-cola.png',           // fixed
+    image: '/burger-cola.png',
     emoji: '🍔🥤',
     color: '#F3E8FF',
   },
@@ -149,11 +172,12 @@ const meals = [
     price: 219,
     originalPrice: 259,
     description: 'Any burger + Two Small Catch Colas. Perfect for two.',
+    tagline: 'Share the joy',
     ingredients: ['Burger of your choice', '2 Small Catch Colas'],
-    nutrition: { calories: '~655', protein: '~12g', fat: '~16g', carbs: '~143g' },
+    nutrition: { calories: '~655', protein: '~12g', fat: '~16g', carbs: '~143g', fiber: '~4g' },
     protein: 'Combo',
     badge: 'Share & Save',
-    image: '/burger-2cola.png',          // fixed
+    image: '/burger-2cola.png',
     emoji: '🍔🥤🥤',
     color: '#F3E8FF',
   },
@@ -164,11 +188,12 @@ const meals = [
     price: 249,
     originalPrice: 289,
     description: 'Any regular pizza + Small Catch Cola.',
+    tagline: 'Pizza and cola – a match made in heaven',
     ingredients: ['Pizza of your choice', 'Small Catch Cola'],
-    nutrition: { calories: '~725', protein: '~22g', fat: '~18g', carbs: '~112g' },
+    nutrition: { calories: '~725', protein: '~22g', fat: '~18g', carbs: '~112g', fiber: '~5g' },
     protein: 'Combo',
     badge: 'Best Deal',
-    image: '/pizza-cola.png',            // fixed
+    image: '/pizza-cola.png',
     emoji: '🍕🥤',
     color: '#F3E8FF',
   },
@@ -179,11 +204,12 @@ const meals = [
     price: 299,
     originalPrice: 349,
     description: 'Any regular pizza + Two Small Catch Colas.',
+    tagline: 'Party of two? This is it!',
     ingredients: ['Pizza of your choice', '2 Small Catch Colas'],
-    nutrition: { calories: '~830', protein: '~22g', fat: '~18g', carbs: '~166g' },
+    nutrition: { calories: '~830', protein: '~22g', fat: '~18g', carbs: '~166g', fiber: '~5g' },
     protein: 'Combo',
     badge: 'Party Pack',
-    image: '/pizza-2cola.png',           // fixed
+    image: '/pizza-2cola.png',
     emoji: '🍕🥤🥤',
     color: '#F3E8FF',
   },
@@ -194,11 +220,12 @@ const meals = [
     price: 399,
     originalPrice: 459,
     description: 'Any burger + Any regular pizza + Small Catch Cola.',
+    tagline: 'The ultimate feast for one',
     ingredients: ['Burger of your choice', 'Pizza of your choice', 'Small Catch Cola'],
-    nutrition: { calories: '~1170', protein: '~34g', fat: '~34g', carbs: '~150g' },
+    nutrition: { calories: '~1170', protein: '~34g', fat: '~34g', carbs: '~150g', fiber: '~7g' },
     protein: 'Combo',
     badge: 'Feast for One',
-    image: '/burger-pizza-1cola.png',    // fixed (matches your file name)
+    image: '/burger-pizza-1cola.png',
     emoji: '🍔🍕🥤',
     color: '#F3E8FF',
   },
@@ -209,17 +236,25 @@ const meals = [
     price: 459,
     originalPrice: 529,
     description: 'Any burger + Any regular pizza + Two Catch Colas. Great for sharing!',
+    tagline: 'Double the drinks, double the fun',
     ingredients: ['Burger of your choice', 'Pizza of your choice', '2 Small Catch Colas'],
-    nutrition: { calories: '~1275', protein: '~34g', fat: '~34g', carbs: '~204g' },
+    nutrition: { calories: '~1275', protein: '~34g', fat: '~34g', carbs: '~204g', fiber: '~7g' },
     protein: 'Combo',
     badge: 'Share & Enjoy',
-    image: '/burger-pizza-2cola.png',    // fixed
+    image: '/burger-pizza-2cola.png',
     emoji: '🍔🍕🥤🥤',
     color: '#F3E8FF',
   },
 ];
 
 const allItems = [...pizzas, ...burgers, ...drinks, ...meals];
+
+// Helper to get related items (same category, exclude current)
+export function getRelatedItems(currentItem, limit = 3) {
+  return allItems
+    .filter(item => item.category === currentItem.category && item.slug !== currentItem.slug)
+    .slice(0, limit);
+}
 
 export function getItemsByCategory(categoryId) {
   if (categoryId === 'featured') return getFeaturedItems();
@@ -233,5 +268,8 @@ export function getFeaturedItems(limit = 6) {
 export function getItemBySlug(slug) {
   return allItems.find(item => item.slug === slug);
 }
+
+// Export menuItems for generateStaticParams
+export const menuItems = allItems;
 
 export { allItems, pizzas, burgers, drinks, meals };

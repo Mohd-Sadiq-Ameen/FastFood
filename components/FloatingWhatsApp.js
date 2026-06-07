@@ -1,17 +1,10 @@
 // components/FloatingWhatsApp.js
 'use client';
 
-import { useState, useEffect } from 'react';
-
 export default function FloatingWhatsApp() {
-  const [isVisible, setIsVisible] = useState(true);
-
-  // Optional: hide on scroll down? Keep visible always per request.
-  // We'll keep always visible.
-
   const phoneNumber = '918700629458';
   const message = encodeURIComponent(
-    'Hi GreenBite! I want to place an order 🍕'
+    'Hi GreenBite! I want to place an order.'
   );
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
@@ -20,7 +13,7 @@ export default function FloatingWhatsApp() {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20b859] text-white rounded-full p-4 shadow-lg transition-all duration-300 hover:scale-110 active:scale-95 flex items-center justify-center group"
+      className="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20b859] text-white rounded-full p-4 shadow-lg transition-all duration-300 hover:scale-110 active:scale-95 flex items-center justify-center"
       aria-label="Chat on WhatsApp"
     >
       <svg
