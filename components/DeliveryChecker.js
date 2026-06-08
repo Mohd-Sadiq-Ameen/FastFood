@@ -60,7 +60,7 @@ export default function DeliveryChecker() {
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gbgreen/10 mb-4">
               <MapPin className="w-8 h-8 text-gbgreen" />
             </div>
-            <h2 className="font-syne font-extrabold text-3xl sm:text-4xl text-gbblack">
+            <h2 className="font-serif font-extrabold text-3xl sm:text-4xl text-gbblack">
               Delivery Check 
             </h2>
             <p className="font-dm text-gray-500 mt-3 max-w-md mx-auto">
@@ -80,7 +80,7 @@ export default function DeliveryChecker() {
             </div>
             <button
               onClick={handleCheck}
-              className="bg-gbgreen hover:bg-green-600 text-white font-syne font-bold px-6 py-3 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-md hover:shadow-lg"
+              className="bg-gbgreen hover:bg-green-600 text-white font-serif font-bold px-6 py-3 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-md hover:shadow-lg"
             >
               <Search size={18} />
               Check
@@ -128,7 +128,7 @@ export default function DeliveryChecker() {
           )}
 
           <div className="mt-10">
-            <h3 className="font-syne font-bold text-xl text-gbblack mb-4">Areas We Serve</h3>
+            <h3 className="font-serif font-bold text-xl text-gbblack mb-4">Areas We Serve</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {deliveryAreas.map((area) => (
                 <div key={area} className="flex items-center gap-3 bg-gray-50 border border-gray-100 rounded-xl p-3 hover:border-gbgreen/30 hover:bg-white transition-all">

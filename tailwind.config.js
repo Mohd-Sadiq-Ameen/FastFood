@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         dm: ['var(--font-dm-sans)', 'sans-serif'],
-        syne: ['var(--font-syne)', 'sans-serif'],
+        serif: ['var(--font-serif)', 'sans-serif'],
       },
       colors: {
         gbgreen: '#22c55e',    // Replace with your exact brand green

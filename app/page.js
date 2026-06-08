@@ -64,7 +64,7 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 w-full">
                 <Link
                   href="/menu"
-                  className="w-full sm:w-auto bg-gbgreen hover:scale-105 hover:shadow-xl text-white font-syne font-bold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all duration-300 active:scale-95 text-center shadow-md"
+                  className="w-full sm:w-auto bg-gbgreen hover:scale-105 hover:shadow-xl text-white font-serif font-bold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all duration-300 active:scale-95 text-center shadow-md"
                 >
                   Explore Menu →
                 </Link>
@@ -72,7 +72,7 @@ export default function HomePage() {
                   href="https://wa.me/918700629458?text=Hi%20GreenBite!%20I%20want%20to%20place%20an%20order%20%F0%9F%8D%95"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto border-2 border-gbblack text-gbblack hover:bg-gbblack hover:text-white font-syne font-bold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all duration-300 active:scale-95 text-center"
+                  className="w-full sm:w-auto border-2 border-gbblack text-gbblack hover:bg-gbblack hover:text-white font-serif font-bold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all duration-300 active:scale-95 text-center"
                 >
                   Order on WhatsApp
                 </a>
@@ -134,7 +134,7 @@ export default function HomePage() {
             <p className="text-gbgreen font-dm font-semibold text-sm uppercase tracking-wider mb-1">
               TRUSTED BY LOCAL FOOD LOVERS
             </p>
-            <h2 className="font-syne font-extrabold text-3xl sm:text-4xl text-gbblack">
+            <h2 className="font-serif font-extrabold text-3xl sm:text-4xl text-gbblack">
               Fresh Food. Fast Delivery. 100% Halal.
             </h2>
             <p className="font-dm text-gray-500 mt-3 max-w-xl mx-auto">
@@ -147,31 +147,31 @@ export default function HomePage() {
             {/* Card 1: Halal Certified */}
             <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center border border-gray-100">
               <div className="w-16 h-16 rounded-2xl bg-gbgreen/10 flex items-center justify-center text-3xl mx-auto mb-4">✓</div>
-              <h3 className="font-syne font-bold text-lg text-gbblack mb-2">100% Halal Certified</h3>
+              <h3 className="font-serif font-bold text-lg text-gbblack mb-2">100% Halal Certified</h3>
               <p className="font-dm text-sm text-gray-500 leading-relaxed">Every meat item is sourced from trusted halal suppliers. No alcohol, no pork, no non‑halal ingredients.</p>
             </div>
             {/* Card 2: Kitchen Hygiene */}
             <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center border border-gray-100">
               <div className="w-16 h-16 rounded-2xl bg-gbgreen/10 flex items-center justify-center text-3xl mx-auto mb-4">🧼</div>
-              <h3 className="font-syne font-bold text-lg text-gbblack mb-2">Kitchen Hygiene First</h3>
+              <h3 className="font-serif font-bold text-lg text-gbblack mb-2">Kitchen Hygiene First</h3>
               <p className="font-dm text-sm text-gray-500 leading-relaxed">Prepared in a clean, sanitised kitchen using food‑safe handling practices from preparation to delivery.</p>
             </div>
             {/* Card 3: Hot & Fast Delivery */}
             <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center border border-gray-100">
               <div className="w-16 h-16 rounded-2xl bg-gbgreen/10 flex items-center justify-center text-3xl mx-auto mb-4">⚡</div>
-              <h3 className="font-syne font-bold text-lg text-gbblack mb-2">Hot & Fast Delivery</h3>
+              <h3 className="font-serif font-bold text-lg text-gbblack mb-2">Hot & Fast Delivery</h3>
               <p className="font-dm text-sm text-gray-500 leading-relaxed">Freshly prepared and delivered quickly so your food arrives hot, not soggy.</p>
             </div>
             {/* Card 4: Fresh Ingredients Daily */}
             <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center border border-gray-100">
               <div className="w-16 h-16 rounded-2xl bg-gbgreen/10 flex items-center justify-center text-3xl mx-auto mb-4">🌱</div>
-              <h3 className="font-syne font-bold text-lg text-gbblack mb-2">Fresh Ingredients Daily</h3>
+              <h3 className="font-serif font-bold text-lg text-gbblack mb-2">Fresh Ingredients Daily</h3>
               <p className="font-dm text-sm text-gray-500 leading-relaxed">We use fresh ingredients and prepare meals daily for better taste and quality.</p>
             </div>
             {/* Card 5: Value for Money */}
             <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 text-center border border-gray-100">
               <div className="w-16 h-16 rounded-2xl bg-gbgreen/10 flex items-center justify-center text-3xl mx-auto mb-4">💰</div>
-              <h3 className="font-syne font-bold text-lg text-gbblack mb-2">Value for Money</h3>
+              <h3 className="font-serif font-bold text-lg text-gbblack mb-2">Value for Money</h3>
               <p className="font-dm text-sm text-gray-500 leading-relaxed">Big portions, fair prices and combo meals designed to give more value in every order.</p>
             </div>
           </div>
@@ -181,7 +181,7 @@ export default function HomePage() {
             <div className="inline-flex items-center gap-1 bg-white rounded-full px-5 py-2 shadow-sm border border-gray-100">
               <span className="font-dm font-semibold text-gbblack ml-2">⭐️ Rated 5.0</span>
               <span className="text-gray-400 text-sm mx-1">by</span>
-              <span className="font-syne font-bold text-gbblack">Many customers</span>
+              <span className="font-serif font-bold text-gbblack">Many customers</span>
             </div>
             <div className="flex flex-wrap justify-center gap-4 mt-5 text-sm font-medium text-gray-600">
               <span>✓ 100% Halal Certified</span>
@@ -199,7 +199,7 @@ export default function HomePage() {
           <p className="text-gbgreen font-dm font-semibold text-sm uppercase tracking-wider mb-1">
             Reviews
           </p>
-          <h2 className="font-syne font-extrabold text-3xl sm:text-4xl text-gbblack">
+          <h2 className="font-serif font-extrabold text-3xl sm:text-4xl text-gbblack">
             What People Say
           </h2>
         </div>

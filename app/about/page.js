@@ -15,7 +15,7 @@ export default function AboutPage() {
       <section className="bg-gbgray border-b border-gray-100 py-14 sm:py-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <div className="inline-block w-2 h-8 bg-gbgreen rounded-full mb-6" aria-hidden />
-          <h1 className="font-syne font-extrabold text-4xl sm:text-5xl text-gbblack mb-5 leading-tight">
+          <h1 className="font-serif font-extrabold text-4xl sm:text-5xl text-gbblack mb-5 leading-tight">
             Who We Are
           </h1>
           <p className="font-dm text-gray-500 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">
@@ -30,7 +30,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 items-center">
           <div>
             <p className="text-gbgreen font-dm font-semibold text-sm uppercase tracking-wider mb-2">Our Story</p>
-            <h2 className="font-syne font-extrabold text-2xl sm:text-3xl text-gbblack mb-4">
+            <h2 className="font-serif font-extrabold text-2xl sm:text-3xl text-gbblack mb-4">
               Started in Delhi, Serving Smiles Since 2022
             </h2>
             <p className="font-dm text-gray-500 text-sm sm:text-base leading-relaxed mb-4">
@@ -51,7 +51,7 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
             <p className="text-gbgreen font-dm font-semibold text-sm uppercase tracking-wider mb-1">What We Stand For</p>
-            <h2 className="font-syne font-extrabold text-2xl sm:text-3xl text-gbblack">Our Values</h2>
+            <h2 className="font-serif font-extrabold text-2xl sm:text-3xl text-gbblack">Our Values</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {[
@@ -61,7 +61,7 @@ export default function AboutPage() {
             ].map(({ icon, title, desc }) => (
               <div key={title} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center">
                 <div className="text-4xl mb-3">{icon}</div>
-                <h3 className="font-syne font-bold text-lg text-gbblack mb-1">{title}</h3>
+                <h3 className="font-serif font-bold text-lg text-gbblack mb-1">{title}</h3>
                 <p className="font-dm text-sm text-gray-500 leading-relaxed">{desc}</p>
               </div>
             ))}
@@ -82,12 +82,12 @@ export default function AboutPage() {
 
       {/* CTA */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 pb-16 text-center">
-        <h2 className="font-syne font-extrabold text-2xl sm:text-3xl text-gbblack mb-4">
+        <h2 className="font-serif font-extrabold text-2xl sm:text-3xl text-gbblack mb-4">
           Ready to taste the difference?
         </h2>
         <Link
           href="/menu"
-          className="inline-block bg-gbgreen hover:bg-green-600 active:scale-95 text-white font-syne font-bold text-base px-8 py-4 rounded-full shadow-md hover:shadow-lg transition-all duration-200"
+          className="inline-block bg-gbgreen hover:bg-green-600 active:scale-95 text-white font-serif font-bold text-base px-8 py-4 rounded-full shadow-md hover:shadow-lg transition-all duration-200"
         >
           Explore Our Menu →
         </Link>

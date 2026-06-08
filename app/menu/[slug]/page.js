@@ -76,7 +76,7 @@ export default function ItemDetailPage({ params }) {
           <div className="flex-1">
             <div className="flex flex-wrap gap-2 mb-3">
               {item.protein && item.protein !== '0g' && (
-                <span className="bg-gbyellow text-gbblack font-syne font-extrabold text-sm px-3 py-1 rounded-full">
+                <span className="bg-gbyellow text-gbblack font-serif font-extrabold text-sm px-3 py-1 rounded-full">
                   Protein {item.protein}
                 </span>
               )}
@@ -87,7 +87,7 @@ export default function ItemDetailPage({ params }) {
               )}
             </div>
 
-            <h1 className="font-syne font-extrabold text-3xl sm:text-4xl text-gbblack mb-2 leading-tight">
+            <h1 className="font-serif font-extrabold text-3xl sm:text-4xl text-gbblack mb-2 leading-tight">
               {item.name}
             </h1>
 
@@ -99,7 +99,7 @@ export default function ItemDetailPage({ params }) {
             </p>
 
             <div className="flex items-baseline gap-3 mb-6">
-              <span className="font-syne font-extrabold text-4xl text-gbblack">₹{item.price}</span>
+              <span className="font-serif font-extrabold text-4xl text-gbblack">₹{item.price}</span>
               {item.originalPrice && (
                 <span className="text-base text-gray-400 line-through font-dm">₹{item.originalPrice}</span>
               )}
@@ -111,7 +111,7 @@ export default function ItemDetailPage({ params }) {
 
         {/* INGREDIENTS */}
         <section className="mb-12">
-          <h2 className="font-syne font-bold text-2xl text-gbblack mb-6">
+          <h2 className="font-serif font-bold text-2xl text-gbblack mb-6">
             What Goes In
           </h2>
           <div className="flex flex-wrap gap-4">
@@ -130,7 +130,7 @@ export default function ItemDetailPage({ params }) {
 
         {/* NUTRITION */}
         <section className="mb-12">
-          <h2 className="font-syne font-bold text-2xl text-gbblack mb-6">
+          <h2 className="font-serif font-bold text-2xl text-gbblack mb-6">
             Nutrition Info
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4">
@@ -139,14 +139,14 @@ export default function ItemDetailPage({ params }) {
                 key={label}
                 className={`bg-white rounded-2xl border-t-4 ${color} border border-gray-100 shadow-sm p-4 text-center`}
               >
-                <p className="font-syne font-extrabold text-2xl text-gbblack">{value}</p>
+                <p className="font-serif font-extrabold text-2xl text-gbblack">{value}</p>
                 <p className="font-dm text-xs text-gray-400 mt-1">{label}</p>
               </div>
             ))}
           </div>
           {item.nutrition.fiber && (
             <div className="inline-flex items-center gap-2 bg-green-50 border border-green-200 rounded-full px-4 py-2">
-              <span className="text-gbgreen font-syne font-bold text-sm">Fiber:</span>
+              <span className="text-gbgreen font-serif font-bold text-sm">Fiber:</span>
               <span className="font-dm text-sm text-gray-600">{item.nutrition.fiber}</span>
             </div>
           )}
@@ -154,7 +154,7 @@ export default function ItemDetailPage({ params }) {
 
         {/* QR CODE SECTION – UPI Payment */}
         <section className="mb-12 py-6 border-t border-gray-100 text-center">
-          <h2 className="font-syne font-bold text-2xl text-gbblack mb-4">
+          <h2 className="font-serif font-bold text-2xl text-gbblack mb-4">
             Quick UPI Payment
           </h2>
           <p className="font-dm text-gray-600 mb-4">
@@ -178,7 +178,7 @@ export default function ItemDetailPage({ params }) {
         {/* RELATED ITEMS */}
         {related.length > 0 && (
           <section>
-            <h2 className="font-syne font-bold text-2xl text-gbblack mb-6">
+            <h2 className="font-serif font-bold text-2xl text-gbblack mb-6">
               You May Also Like
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">

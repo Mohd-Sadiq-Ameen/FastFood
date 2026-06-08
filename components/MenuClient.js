@@ -29,7 +29,7 @@ export default function MenuClient() {
           <div className="flex-1">
             {activeCat && (
               <div className="mb-6">
-                <h3 className="font-syne font-bold text-3xl">
+                <h3 className="font-serif font-bold text-3xl">
                   {activeCat.emoji} {activeCat.label}
                 </h3>
               </div>

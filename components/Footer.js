@@ -9,10 +9,10 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <span className="w-8 h-8 rounded-full bg-gbgreen flex items-center justify-center text-white font-syne font-extrabold text-base">
+              <span className="w-8 h-8 rounded-full bg-gbgreen flex items-center justify-center text-white font-serif font-extrabold text-base">
                 G
               </span>
-              <span className="font-syne font-extrabold text-lg">
+              <span className="font-serif font-extrabold text-lg">
                 Green<span className="text-gbgreen">Bite</span>
               </span>
             </div>
@@ -29,7 +29,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-syne font-bold text-sm uppercase tracking-wider text-gray-300 mb-4">
+            <h3 className="font-serif font-bold text-sm uppercase tracking-wider text-gray-300 mb-4">
               Quick Links
             </h3>
             <ul className="space-y-2 font-dm text-sm text-gray-400">
@@ -49,7 +49,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="font-syne font-bold text-sm uppercase tracking-wider text-gray-300 mb-4">
+            <h3 className="font-serif font-bold text-sm uppercase tracking-wider text-gray-300 mb-4">
               Contact Us
             </h3>
             <div className="space-y-2 font-dm text-sm text-gray-400">

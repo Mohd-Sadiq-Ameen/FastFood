@@ -30,7 +30,7 @@ export default function HomeMenuSection({ featuredOnly = false, maxItems = 6 }) 
           <p className="text-gbgreen font-semibold uppercase tracking-widest text-sm">
             Fresh & Delicious
           </p>
-          <h2 className="font-syne font-extrabold text-4xl sm:text-5xl text-gbblack mt-2">
+          <h2 className="font-serif font-extrabold text-4xl sm:text-5xl text-gbblack mt-2">
             Our Menu
           </h2>
           <p className="text-gray-500 mt-3 max-w-md mx-auto">
@@ -46,7 +46,7 @@ export default function HomeMenuSection({ featuredOnly = false, maxItems = 6 }) 
           <div className="flex-1">
             {!featuredOnly && activeCat && (
               <div className="mb-6">
-                <h3 className="font-syne font-bold text-3xl">
+                <h3 className="font-serif font-bold text-3xl">
                   {activeCat.emoji} {activeCat.label}
                 </h3>
               </div>
@@ -62,7 +62,7 @@ export default function HomeMenuSection({ featuredOnly = false, maxItems = 6 }) 
               <div className="text-center mt-10">
                 <a
                   href="/menu"
-                  className="inline-block bg-gbgreen hover:scale-105 hover:shadow-xl text-white font-syne font-bold px-8 py-3 rounded-full transition-all duration-300 shadow-md"
+                  className="inline-block bg-gbgreen hover:scale-105 hover:shadow-xl text-white font-serif font-bold px-8 py-3 rounded-full transition-all duration-300 shadow-md"
                 >
                   View Full Menu →
                 </a>

@@ -17,7 +17,7 @@ export default function MenuPage() {
           <p className="text-gbgreen font-dm font-semibold text-sm uppercase tracking-wider mb-1">
             Browse &amp; Order
           </p>
-          <h1 className="font-syne font-extrabold text-3xl sm:text-4xl text-gbblack">
+          <h1 className="font-serif font-extrabold text-3xl sm:text-4xl text-gbblack">
             Our Menu
           </h1>
           <p className="font-dm text-gray-500 mt-2 text-sm sm:text-base">

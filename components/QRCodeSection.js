@@ -66,7 +66,7 @@ Please confirm and deliver within 30 mins.`;
           <p className="text-gbgreen font-dm font-semibold text-sm uppercase tracking-wider mb-1">
             Easy Payment
           </p>
-          <h2 className="font-syne font-extrabold text-3xl sm:text-4xl text-gbblack">
+          <h2 className="font-serif font-extrabold text-3xl sm:text-4xl text-gbblack">
             Scan & Pay in Seconds
           </h2>
           <p className="font-dm text-gray-500 mt-3 max-w-xl mx-auto">
@@ -79,7 +79,7 @@ Please confirm and deliver within 30 mins.`;
           <div className="space-y-8">
             {/* Option 1: QR Code */}
             <div className="bg-gray-50 rounded-2xl p-6 text-center">
-              <h3 className="font-syne font-bold text-xl text-gbblack mb-4">📱 Scan QR Code</h3>
+              <h3 className="font-serif font-bold text-xl text-gbblack mb-4">📱 Scan QR Code</h3>
               <div className="relative w-48 h-48 mx-auto border-4 border-gbgreen/20 rounded-2xl p-2 bg-white shadow-md">
                 <Image
                   src="/qr.jpeg"
@@ -93,7 +93,7 @@ Please confirm and deliver within 30 mins.`;
 
             {/* Option 2: UPI ID */}
             <div className="bg-gray-50 rounded-2xl p-6 text-center">
-              <h3 className="font-syne font-bold text-xl text-gbblack mb-2">💳 Pay via UPI ID</h3>
+              <h3 className="font-serif font-bold text-xl text-gbblack mb-2">💳 Pay via UPI ID</h3>
               <div className="flex items-center justify-center gap-2 flex-wrap">
                 <code className="bg-white px-3 py-1 rounded-lg border text-sm font-mono">{upiId}</code>
                 <button
@@ -108,7 +108,7 @@ Please confirm and deliver within 30 mins.`;
 
             {/* Option 3: Pay to Mobile Number */}
             <div className="bg-gray-50 rounded-2xl p-6 text-center">
-              <h3 className="font-syne font-bold text-xl text-gbblack mb-2">📞 Pay to Mobile Number</h3>
+              <h3 className="font-serif font-bold text-xl text-gbblack mb-2">📞 Pay to Mobile Number</h3>
               <div className="flex items-center justify-center gap-2 flex-wrap">
                 <span className="bg-white px-3 py-1 rounded-lg border text-lg font-mono font-bold">{mobileForPayment}</span>
                 <button
@@ -124,7 +124,7 @@ Please confirm and deliver within 30 mins.`;
 
           {/* RIGHT: Order form + WhatsApp confirmation */}
           <div className="bg-white border border-gray-100 rounded-2xl shadow-sm p-6">
-            <h3 className="font-syne font-bold text-xl text-gbblack mb-4">Place Your Order</h3>
+            <h3 className="font-serif font-bold text-xl text-gbblack mb-4">Place Your Order</h3>
             <p className="text-sm text-gray-500 mb-4">
               Fill in your details, then click confirm. You will be redirected to WhatsApp with a pre-filled message. After payment, send the screenshot – we will deliver within 30 minutes.
             </p>
@@ -181,7 +181,7 @@ Please confirm and deliver within 30 mins.`;
 
               <button
                 onClick={handleSubmitOrder}
-                className="w-full bg-gbgreen hover:bg-green-600 text-white font-syne font-bold py-3 rounded-full transition-all duration-300 shadow-md mt-2"
+                className="w-full bg-gbgreen hover:bg-green-600 text-white font-serif font-bold py-3 rounded-full transition-all duration-300 shadow-md mt-2"
               >
                 Confirm Order on WhatsApp →
               </button>

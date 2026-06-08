@@ -26,10 +26,10 @@ export default function Navbar() {
         <div className="bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-white/20 px-3 sm:px-5 lg:px-8 py-2 sm:py-3 flex items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-1.5 sm:gap-2 shrink-0">
-            <span className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gbgreen flex items-center justify-center text-white font-syne font-extrabold text-lg sm:text-xl leading-none shadow-md">
+            <span className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gbgreen flex items-center justify-center text-white font-serif font-extrabold text-lg sm:text-xl leading-none shadow-md">
               G
             </span>
-            <span className="font-syne font-extrabold text-lg sm:text-xl text-gbblack tracking-tight">
+            <span className="font-serif font-extrabold text-lg sm:text-xl text-gbblack tracking-tight">
               Green<span className="text-gbgreen">Bite</span>
             </span>
           </Link>

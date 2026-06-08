@@ -47,7 +47,7 @@ export default function MenuItemCard({ item }) {
 
       {/* Content – only price and order button, centered */}
       <div className="p-4 flex flex-col items-center">
-        <span className="font-syne font-extrabold text-2xl text-gbblack">
+        <span className="font-serif font-extrabold text-2xl text-gbblack">
           ₹{item.price}
         </span>
 

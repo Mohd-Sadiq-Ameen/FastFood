@@ -10,7 +10,7 @@ export default function WhatsAppOrderButton({ itemName, price }) {
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        className="relative flex items-center justify-center gap-3 w-full bg-[#25D366] hover:bg-[#1ebe5a] active:scale-95 text-white font-syne font-bold text-base sm:text-lg py-4 px-6 rounded-2xl shadow-md hover:shadow-lg transition-all duration-200 overflow-hidden"
+        className="relative flex items-center justify-center gap-3 w-full bg-[#25D366] hover:bg-[#1ebe5a] active:scale-95 text-white font-serif font-bold text-base sm:text-lg py-4 px-6 rounded-2xl shadow-md hover:shadow-lg transition-all duration-200 overflow-hidden"
       >
         <WhatsAppIcon className="w-6 h-6 shrink-0" />
         <span>Order on WhatsApp — ₹{price}</span>
