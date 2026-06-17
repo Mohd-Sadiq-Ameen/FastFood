@@ -27,7 +27,7 @@ export default function HomeMenuSection({
   const activeCat = categories.find((c) => c.id === active);
 
   return (
-    <section className="bg-zinc-50 py-20">
+    <section className="bg-zinc-50 py-10">
 
       <div className="max-w-7xl mx-auto px-5">
 

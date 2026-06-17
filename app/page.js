@@ -3,7 +3,6 @@ import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 
 import Hero from '@/components/Hero';
-import TrustBadges from '@/components/TrustBadges';
 import DeliveryChecker from '@/components/DeliveryChecker';
 import HomeMenuSection from '@/components/HomeMenuSection';
 import WhySection from '@/components/WhySection';
@@ -17,9 +16,8 @@ export default function HomePage() {
 
       <main className="w-full">
         <Hero />
-        <TrustBadges />
-        <DeliveryChecker />
         <HomeMenuSection featuredOnly={true} maxItems={6} />
+        <DeliveryChecker />
         <WhySection />
         <Reviews />
         <QRCodeSection />
