@@ -6,10 +6,12 @@ import { Search, MapPin, CheckCircle, XCircle, MessageCircle } from 'lucide-reac
 
 // Only very close areas (as specified by you, plus minimal adjacent)
 const deliveryAreas = [
-  "Tara Apartments",
+  "All Okhla Areas",
+  "Govind Puri",
   "Tughlakabad",
   "Hamdard University",
-  "Govind Puri",
+  "Sangam Vihar",
+
   "DDA Flats Kalkaji",
   "Kalkaji Extension",
   // Optional: only if needed – can be removed
@@ -61,7 +63,7 @@ export default function DeliveryChecker() {
               <MapPin className="w-8 h-8 text-gbgreen" />
             </div>
             <h2 className="font-serif font-extrabold text-3xl sm:text-4xl text-gbblack">
-              Delivery Check 
+              Delivery Check
             </h2>
             <p className="font-dm text-gray-500 mt-3 max-w-md mx-auto">
               Enter your area – we&apos;ll instantly tell you if we deliver to you. <br /> <span className='text-red-600' >Currently Limited Areas Only  </span>          </p>

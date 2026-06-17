@@ -1,4 +1,3 @@
-// components/QRCodeSection.js
 'use client';
 
 import Image from 'next/image';
@@ -8,7 +7,6 @@ export default function QRCodeSection({ isPage = false }) {
   const [copiedUpi, setCopiedUpi] = useState(false);
   const [copiedNumber, setCopiedNumber] = useState(false);
 
-  // Form state
   const [form, setForm] = useState({
     name: '',
     phone: '',
@@ -16,20 +14,20 @@ export default function QRCodeSection({ isPage = false }) {
     orderDetails: '',
   });
 
-  const phoneNumber = '918700629458'; // WhatsApp business number
+  const phoneNumber = '918700629458';
   const upiId = '8700629458@okhdfcbank';
   const mobileForPayment = '8700629458';
 
   const copyUpiId = () => {
     navigator.clipboard.writeText(upiId);
     setCopiedUpi(true);
-    setTimeout(() => setCopiedUpi(false), 2000);
+    setTimeout(() => setCopiedUpi(false), 1500);
   };
 
   const copyMobileNumber = () => {
     navigator.clipboard.writeText(mobileForPayment);
     setCopiedNumber(true);
-    setTimeout(() => setCopiedNumber(false), 2000);
+    setTimeout(() => setCopiedNumber(false), 1500);
   };
 
   const handleChange = (e) => {
@@ -37,165 +35,158 @@ export default function QRCodeSection({ isPage = false }) {
   };
 
   const generateWhatsAppMessage = () => {
-    const message = `New Order from GreenBite
-  
+    return encodeURIComponent(`
+New Order - Thala Cafe
+
 Name: ${form.name}
 Phone: ${form.phone}
 Address: ${form.address}
 Order: ${form.orderDetails}
 
-Payment will be made via UPI. I will share the screenshot after payment.
-
-Please confirm and deliver within 30 mins.`;
-    return encodeURIComponent(message);
+Payment via UPI. Will send screenshot after payment.
+    `);
   };
 
   const handleSubmitOrder = () => {
     if (!form.name || !form.phone || !form.address || !form.orderDetails) {
-      alert('Please fill all fields before placing order.');
+      alert('Please complete all fields');
       return;
     }
-    const waUrl = `https://wa.me/${phoneNumber}?text=${generateWhatsAppMessage()}`;
-    window.open(waUrl, '_blank');
+    window.open(
+      `https://wa.me/${phoneNumber}?text=${generateWhatsAppMessage()}`,
+      '_blank'
+    );
   };
 
   return (
-    <section className={`${isPage ? 'py-16' : 'py-14 sm:py-16'} bg-white`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+    <section className="bg-zinc-50 py-16">
+      <div className="max-w-7xl mx-auto px-5">
+
+        {/* HEADER */}
         <div className="text-center mb-10">
-          <p className="text-gbgreen font-dm font-semibold text-sm uppercase tracking-wider mb-1">
-            Easy Payment
-          </p>
-          <h2 className="font-serif font-extrabold text-3xl sm:text-4xl text-gbblack">
-            Scan & Pay in Seconds
+          <h2 className="text-3xl sm:text-4xl font-bold">
+            Pay & Order in Seconds
           </h2>
-          <p className="font-dm text-gray-500 mt-3 max-w-xl mx-auto">
-            Choose any option – QR, UPI ID, or pay directly to mobile number. Then fill the form and confirm.
+          <p className="text-zinc-500 mt-2 max-w-xl mx-auto text-sm">
+            Scan QR, use UPI, or place order directly via WhatsApp.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* LEFT: Payment options */}
-          <div className="space-y-8">
-            {/* Option 1: QR Code */}
-            <div className="bg-gray-50 rounded-2xl p-6 text-center">
-              <h3 className="font-serif font-bold text-xl text-gbblack mb-4">📱 Scan QR Code</h3>
-              <div className="relative w-48 h-48 mx-auto border-4 border-gbgreen/20 rounded-2xl p-2 bg-white shadow-md">
+        <div className="grid lg:grid-cols-2 gap-10">
+
+          {/* LEFT - PAYMENT OPTIONS */}
+          <div className="space-y-6">
+
+            {/* QR CARD (PRIMARY) */}
+            <div className="bg-white rounded-2xl p-6 shadow-sm border border-zinc-100 text-center">
+              <h3 className="font-semibold mb-4">Scan & Pay</h3>
+
+              <div className="relative w-52 h-52 mx-auto">
                 <Image
                   src="/qr.jpeg"
-                  alt="UPI QR Code"
+                  alt="QR Code"
                   fill
                   className="object-contain"
                 />
               </div>
-              <p className="mt-3 text-sm text-gray-500">Google Pay | PhonePe | Paytm</p>
+
+              <p className="text-xs text-zinc-500 mt-3">
+                Google Pay • PhonePe • Paytm
+              </p>
             </div>
 
-            {/* Option 2: UPI ID */}
-            <div className="bg-gray-50 rounded-2xl p-6 text-center">
-              <h3 className="font-serif font-bold text-xl text-gbblack mb-2">💳 Pay via UPI ID</h3>
-              <div className="flex items-center justify-center gap-2 flex-wrap">
-                <code className="bg-white px-3 py-1 rounded-lg border text-sm font-mono">{upiId}</code>
+            {/* UPI + MOBILE (SECONDARY GRID) */}
+            <div className="grid sm:grid-cols-2 gap-4">
+
+              <div className="bg-white rounded-2xl p-4 border border-zinc-100">
+                <p className="text-sm font-semibold">UPI ID</p>
+                <p className="text-xs text-zinc-500 mt-1 break-all">
+                  {upiId}
+                </p>
                 <button
                   onClick={copyUpiId}
-                  className="text-gbgreen text-sm font-medium hover:underline"
+                  className="text-green-600 text-xs mt-2"
                 >
-                  {copiedUpi ? '✓ Copied!' : 'Copy'}
+                  {copiedUpi ? '✓ Copied' : 'Copy'}
                 </button>
               </div>
-              <p className="text-xs text-gray-400 mt-2">Use any UPI app to send payment.</p>
-            </div>
 
-            {/* Option 3: Pay to Mobile Number */}
-            <div className="bg-gray-50 rounded-2xl p-6 text-center">
-              <h3 className="font-serif font-bold text-xl text-gbblack mb-2">📞 Pay to Mobile Number</h3>
-              <div className="flex items-center justify-center gap-2 flex-wrap">
-                <span className="bg-white px-3 py-1 rounded-lg border text-lg font-mono font-bold">{mobileForPayment}</span>
+              <div className="bg-white rounded-2xl p-4 border border-zinc-100">
+                <p className="text-sm font-semibold">Mobile Pay</p>
+                <p className="text-xs text-zinc-500 mt-1">
+                  {mobileForPayment}
+                </p>
                 <button
                   onClick={copyMobileNumber}
-                  className="text-gbgreen text-sm font-medium hover:underline"
+                  className="text-green-600 text-xs mt-2"
                 >
-                  {copiedNumber ? '✓ Copied!' : 'Copy'}
+                  {copiedNumber ? '✓ Copied' : 'Copy'}
                 </button>
               </div>
-              <p className="text-xs text-gray-400 mt-2">Open PhonePe/GPay and send to this number.</p>
+
             </div>
           </div>
 
-          {/* RIGHT: Order form + WhatsApp confirmation */}
-          <div className="bg-white border border-gray-100 rounded-2xl shadow-sm p-6">
-            <h3 className="font-serif font-bold text-xl text-gbblack mb-4">Place Your Order</h3>
-            <p className="text-sm text-gray-500 mb-4">
-              Fill in your details, then click confirm. You will be redirected to WhatsApp with a pre-filled message. After payment, send the screenshot – we will deliver within 30 minutes.
-            </p>
+          {/* RIGHT - ORDER CARD */}
+          <div className="bg-white rounded-2xl shadow-sm border border-zinc-100 p-6">
+
+            <h3 className="text-xl font-bold mb-4">
+              Place Your Order
+            </h3>
 
             <div className="space-y-4">
-              <div>
-                <label className="block text-sm font-dm font-medium text-gray-700 mb-1">Full Name *</label>
-                <input
-                  type="text"
-                  name="name"
-                  value={form.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gbgreen"
-                  placeholder="John Doe"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-dm font-medium text-gray-700 mb-1">Phone Number *</label>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={form.phone}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gbgreen"
-                  placeholder="9876543210"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-dm font-medium text-gray-700 mb-1">Delivery Address *</label>
-                <textarea
-                  name="address"
-                  value={form.address}
-                  onChange={handleChange}
-                  rows="2"
-                  className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gbgreen"
-                  placeholder="House No., Street, Landmark, City"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-dm font-medium text-gray-700 mb-1">What would you like to order? *</label>
-                <textarea
-                  name="orderDetails"
-                  value={form.orderDetails}
-                  onChange={handleChange}
-                  rows="2"
-                  className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gbgreen"
-                  placeholder="e.g., 1x Margherita Pizza, 1x Veg Burger, 1x Small Catch Cola"
-                  required
-                />
-              </div>
+
+              <input
+                name="name"
+                placeholder="Full Name"
+                className="w-full border rounded-xl px-4 py-3 text-sm"
+                onChange={handleChange}
+              />
+
+              <input
+                name="phone"
+                placeholder="Phone Number"
+                className="w-full border rounded-xl px-4 py-3 text-sm"
+                onChange={handleChange}
+              />
+
+              <textarea
+                name="address"
+                placeholder="Delivery Address"
+                className="w-full border rounded-xl px-4 py-3 text-sm"
+                onChange={handleChange}
+              />
+
+              <textarea
+                name="orderDetails"
+                placeholder="What do you want?"
+                className="w-full border rounded-xl px-4 py-3 text-sm"
+                onChange={handleChange}
+              />
 
               <button
                 onClick={handleSubmitOrder}
-                className="w-full bg-gbgreen hover:bg-green-600 text-white font-serif font-bold py-3 rounded-full transition-all duration-300 shadow-md mt-2"
+                className="w-full bg-black text-white py-3 rounded-xl font-semibold hover:bg-zinc-800"
               >
                 Confirm Order on WhatsApp →
               </button>
+
             </div>
 
-            <div className="mt-6 text-xs text-gray-400 text-center border-t pt-4">
-              <p>After payment, send the screenshot on WhatsApp. We will confirm and deliver in under 30 mins.</p>
-            </div>
+            <p className="text-xs text-zinc-400 mt-4 text-center">
+              Delivery in ~30 minutes after confirmation
+            </p>
+
           </div>
         </div>
 
-        <div className="mt-12 text-center text-sm text-gray-400 border-t pt-6">
-          <p>🔒 Secure payment – we never store your card or UPI details.</p>
+        {/* TRUST STRIP */}
+        <div className="mt-10 flex justify-center gap-4 text-xs text-zinc-500 flex-wrap">
+          <span>⚡ Fast Delivery</span>
+          <span>🔒 Secure Payment</span>
+          <span>🍕 Fresh Food</span>
         </div>
+
       </div>
     </section>
   );

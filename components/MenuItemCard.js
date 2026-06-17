@@ -3,62 +3,81 @@ import Image from 'next/image';
 
 export default function MenuItemCard({ item }) {
   const waMsg = encodeURIComponent(
-    `🍽️ *New Order from GreenBite*\n\n📦 *Ordered:* ${item.name}\n💰 *Amount to Pay:* ₹${item.price}\n\nPlease confirm my order! I'll share my delivery address. 🙏`
+    `🍽️ *New Order from Thala Cafe*\n\n📦 *Item:* ${item.name}\n💰 *Price:* ₹${item.price}\n\nPlease confirm my order 🙏`
   );
-  const waUrl = `https://wa.me/918700629458?text=${waMsg}`;
 
-  // Determine top badge text: protein if exists and not 0g, else fat from nutrition
-  let topBadge = '';
+  const waUrl = `https://wa.me/918707515005?text=${waMsg}`;
+
+  let macroBadge = null;
+
   if (item.protein && item.protein !== '0g') {
-    topBadge = `Protein ${item.protein}`;
+    macroBadge = `🔥 Protein ${item.protein}`;
   } else if (item.nutrition?.fat) {
-    topBadge = `Fat ${item.nutrition.fat}`;
+    macroBadge = `⚡ Fat ${item.nutrition.fat}`;
   }
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-gbgreen/30 transition-all duration-200 overflow-hidden group flex flex-col">
-      {/* Image area with link to details page */}
-      <Link href={`/menu/${item.slug}`} aria-label={item.name}>
-        <div className="relative h-44 cursor-pointer overflow-hidden" style={{ backgroundColor: item.color || '#f3f4f6' }}>
+    <div className="bg-white rounded-3xl border border-zinc-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group">
+
+      {/* IMAGE */}
+      <Link href={`/menu/${item.slug}`}>
+        <div className="relative aspect-[4/3] bg-zinc-50 overflow-hidden">
+
+          {/* MACRO BADGE */}
+          {macroBadge && (
+            <div className="absolute top-3 right-3 z-10">
+              <span className="bg-yellow-400 text-black text-[10px] px-2 py-1 rounded-full font-bold">
+                {macroBadge}
+              </span>
+            </div>
+          )}
+
           {item.image ? (
             <Image
               src={item.image}
               alt={item.name}
               fill
-              className="object-cover transition-transform duration-300 group-hover:scale-105"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center text-7xl">
+            <div className="w-full h-full flex items-center justify-center text-6xl">
               {item.emoji || '🍕'}
             </div>
           )}
 
-          {/* Top badge (protein or fat) */}
-          {topBadge && (
-            <div className="absolute top-2 left-2">
-              <span className="bg-gbyellow text-gbblack text-xs font-serif font-bold px-2 py-0.5 rounded-full leading-tight">
-                {topBadge}
-              </span>
-            </div>
-          )}
         </div>
       </Link>
 
-      {/* Content – only price and order button, centered */}
-      <div className="p-4 flex flex-col items-center">
-        <span className="font-serif font-extrabold text-2xl text-gbblack">
-          ₹{item.price}
-        </span>
+      {/* CONTENT */}
+      <div className="p-4 flex flex-col gap-2">
+
+        <h3 className="font-serif font-bold text-lg text-zinc-900 leading-snug">
+          {item.name}
+        </h3>
+
+        {item.desc && (
+          <p className="text-xs text-zinc-500 line-clamp-2">
+            {item.desc}
+          </p>
+        )}
+
+        <div className="flex items-center justify-between mt-2">
+
+          <span className="text-xl font-extrabold text-black">
+            ₹{item.price}
+          </span>
+
+        </div>
 
         <a
           href={waUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full mt-3 bg-gbgreen hover:bg-green-600 active:scale-95 text-white font-bold py-3 rounded-full transition-all duration-150 text-center"
+          className="mt-3 w-full bg-black hover:bg-zinc-800 text-white font-semibold py-3 rounded-xl text-center transition-all active:scale-95"
         >
-          Order Now
+          Order Now →
         </a>
+
       </div>
     </div>
   );
