@@ -53,7 +53,7 @@ export default function DeliveryChecker() {
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
   return (
-    <section className="py-14 sm:py-16 bg-white">
+    <section className="py-6 sm:py-16 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <div className="bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 p-6 sm:p-8">
           <div className="text-center mb-8">

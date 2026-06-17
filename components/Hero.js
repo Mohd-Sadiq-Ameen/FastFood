@@ -6,30 +6,20 @@ export default function Hero() {
         <section className="bg-[#ffffff] overflow-hidden" >
             <div className="max-w-7xl mx-auto px-5 py-1">
 
-                {/* Top badges */}
-                <div className="flex justify-center gap-2 flex-wrap mb-2">
-
-                    {/* <span className="bg-yellow-100 px-3 py-1 rounded-full text-xs font-semibold">
-                        ⭐ Rated 5.0
-                    </span>
-
-                    <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full text-xs font-semibold">
-                        ⚡ 30 Min Delivery
-                    </span> */}
-
-                </div>
 
                 {/* Heading */}
-                <div className="text-center">
+                <div className="text-center mt-2">
 
                     <h1 className="
-      font-mono
-      text-5xl
-      sm:text-5xl
-      lg:text-7xl
-      font-bold
-      leading-[0.95]
-      tracking-tight
+                    max-w-[400px]
+                    mx-auto
+                    font-mono
+                    text-5xl
+                    sm:text-5xl
+                    lg:text-7xl
+                    font-bold
+                    leading-[0.95]
+                    tracking-tighter
 
       ">
 
@@ -43,12 +33,11 @@ export default function Hero() {
                     </h1>
 
                     <p className="
-      mt-4
+      mt-2
       text-zinc-600
-      max-w-md
+      max-w-[420px]
       mx-auto
-      text-base
-      sm:text-lg
+      text-sm
       ">
                         Freshly prepared Pizzas , Burgers , Fries , Momos and Cold Campa
                         from Thala Cafe.
@@ -131,28 +120,28 @@ export default function Hero() {
 
                 </div>
 
+              
                 {/* Features */}
-                <div className="
-    grid
-    grid-cols-2
-    gap-3
-    mt-6
-    ">
+                <div className="mt-6 grid grid-cols-2 gap-3">
 
-                    <div className="bg-white rounded-2xl p-3 text-center shadow-sm">
-                        🌱 Fresh Daily
+                    <div className="bg-gradient-to-br from-white to-zinc-50 border border-zinc-100 rounded-2xl p-4 text-center shadow-sm">
+                        <div className="text-lg">🌱</div>
+                        <div className="text-sm font-semibold">Fresh Daily</div>
                     </div>
 
-                    <div className="bg-white rounded-2xl p-3 text-center shadow-sm">
-                        🚚 Fast Delivery
+                    <div className="bg-gradient-to-br from-white to-zinc-50 border border-zinc-100 rounded-2xl p-4 text-center shadow-sm">
+                        <div className="text-lg">🚚</div>
+                        <div className="text-sm font-semibold">Fast Delivery</div>
                     </div>
 
-                    <div className="bg-white rounded-2xl p-3 text-center shadow-sm">
-                        ⭐ Top Rated
+                    <div className="bg-gradient-to-br from-white to-zinc-50 border border-zinc-100 rounded-2xl p-4 text-center shadow-sm">
+                        <div className="text-lg">⭐</div>
+                        <div className="text-sm font-semibold">Top Rated</div>
                     </div>
 
-                    <div className="bg-white rounded-2xl p-3 text-center shadow-sm">
-                        💰 Affordable
+                    <div className="bg-gradient-to-br from-white to-zinc-50 border border-zinc-100 rounded-2xl p-4 text-center shadow-sm">
+                        <div className="text-lg">💰</div>
+                        <div className="text-sm font-semibold">Affordable</div>
                     </div>
 
                 </div>
