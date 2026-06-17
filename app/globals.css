@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ================================
+   THALA CAFE DESIGN SYSTEM
+================================ */
+
+:root {
+  --background: #fffdf7;
+  --foreground: #111111;
+
+  --primary: #f4b400;
+  --primary-dark: #d89c00;
+
+  --muted: #666666;
+  --border: #f1e5b8;
+
+  --card: #ffffff;
+}
+
+/* ================================
+   BASE
+================================ */
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -10,40 +31,140 @@
   }
 
   body {
-    @apply bg-white text-gbblack font-dm;
+    background: var(--background);
+    color: var(--foreground);
+    font-family:
+      Inter,
+      system-ui,
+      sans-serif;
+
+    overflow-x: hidden;
   }
 
-  h1, h2, h3, h4, h5 {
-    @apply font-serif;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: #111111;
+  }
+
+  * {
+    box-sizing: border-box;
   }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* ================================
+   REUSABLE COMPONENTS
+================================ */
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-[#F4B400] px-8 py-4 font-bold text-black transition-all duration-300 hover:scale-105 hover:bg-[#D89C00];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full border-2 border-black px-8 py-4 font-bold text-black transition-all duration-300 hover:bg-black hover:text-white;
+  }
+
+  .card-premium {
+    @apply bg-white rounded-3xl border border-yellow-100 p-8 transition-all duration-300 hover:-translate-y-2 hover:border-yellow-400 hover:shadow-xl;
+  }
+
+  .badge-thala {
+    @apply inline-flex items-center gap-2 rounded-full border border-[#F4B400] bg-[#FFF4CC] px-4 py-2 text-sm font-semibold text-black;
   }
 }
 
-/* WhatsApp button pulse ring */
+/* ================================
+   WHATSAPP PULSE
+================================ */
+
 @keyframes ping-wa {
-  0%   { transform: scale(1);   opacity: 0.6; }
-  100% { transform: scale(1.6); opacity: 0; }
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
 }
 
 .wa-ping::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   border-radius: 9999px;
-  background: #25D366;
+  background: #25d366;
   animation: ping-wa 1.8s ease-out infinite;
   z-index: -1;
 }
 
-/* ===== CRITICAL FIX: removes any hidden right margin ===== */
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  width: 100%;
+.container-custom {
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+.section-padding {
+  padding-block: 5rem;
+}
+
+.btn-primary {
+  @apply bg-yellow-400 text-black font-bold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:bg-yellow-500;
+}
+
+.btn-secondary {
+  @apply border-2 border-black text-black font-bold px-8 py-4 rounded-full transition-all duration-300 hover:bg-black hover:text-white;
+}
+
+.card-premium {
+  @apply bg-white rounded-3xl p-8 shadow-sm border border-yellow-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2;
+}
+
+.badge-thala {
+  @apply bg-yellow-100 text-black px-5 py-3 rounded-full font-semibold;
+}
+
+/* ================================
+   PREMIUM SCROLLBAR
+================================ */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fffdf7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f4b400;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d89c00;
+}
+
+/* ================================
+   SELECTION
+================================ */
+
+::selection {
+  background: #f4b400;
+  color: black;
 }
