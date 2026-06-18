@@ -55,9 +55,9 @@ export default function AboutPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {[
-              { icon: '🌿', title: 'Farm Fresh',      desc: 'Ingredients sourced every morning. No compromise on freshness.' },
-              { icon: '🔥', title: 'Made to Order',   desc: 'Nothing sits under heat lamps. Your order is made when you place it.' },
-              { icon: '📦', title: 'Delivered Hot',   desc: 'Packed and dispatched within minutes. Your food arrives as intended.' },
+              { icon: '🌿', title: 'Farm Fresh', desc: 'Ingredients sourced every morning. No compromise on freshness.' },
+              { icon: '🔥', title: 'Made to Order', desc: 'Nothing sits under heat lamps. Your order is made when you place it.' },
+              { icon: '📦', title: 'Delivered Hot', desc: 'Packed and dispatched within minutes. Your food arrives as intended.' },
             ].map(({ icon, title, desc }) => (
               <div key={title} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center">
                 <div className="text-4xl mb-3">{icon}</div>

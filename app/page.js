@@ -8,6 +8,8 @@ import HomeMenuSection from '@/components/HomeMenuSection';
 import WhySection from '@/components/WhySection';
 import Reviews from '@/components/Reviews';
 import QRCodeSection from '@/components/QRCodeSection';
+import CartProvider from '@/components/cart/CartProvider';
+import CartDrawer from '@/components/cart/CartDrawer';
 
 export default function HomePage() {
   return (

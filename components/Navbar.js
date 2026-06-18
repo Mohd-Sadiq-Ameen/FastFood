@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
+import CartButton from "@/components/cart/CartButton";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -51,8 +52,8 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   className={`relative text-sm font-semibold transition ${active
-                      ? "text-yellow-500"
-                      : "text-gray-700 hover:text-black"
+                    ? "text-yellow-500"
+                    : "text-gray-700 hover:text-black"
                     }`}
                 >
                   {link.label}
@@ -66,12 +67,46 @@ export default function Navbar() {
           </nav>
 
           {/* CTA */}
-          <Link
-            href="/menu"
-            className="hidden md:inline-flex items-center rounded-full bg-black px-6 py-3 text-sm font-bold text-yellow-400 transition hover:scale-105"
-          >
-            Order Now
-          </Link>
+          <div className="hidden md:flex items-center gap-3">
+
+            <CartButton />
+
+            <Link
+
+              href="/menu"
+
+              className="
+
+inline-flex
+items-center
+
+rounded-full
+
+bg-black
+
+px-6
+
+py-3
+
+text-sm
+
+font-bold
+
+text-yellow-400
+
+hover:scale-105
+
+transition
+
+"
+
+            >
+
+              Order Now
+
+            </Link>
+
+          </div>
 
           {/* Mobile Button */}
           <button
@@ -90,14 +125,19 @@ export default function Navbar() {
         {open && (
           <div className="mt-3 rounded-3xl border border-black/10 bg-white p-5 shadow-xl md:hidden">
             <div className="space-y-4">
+              <div className="pb-3">
+
+                <CartButton />
+
+              </div>
               {links.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
                   className={`block text-base font-medium ${pathname === link.href
-                      ? "text-yellow-500"
-                      : "text-black"
+                    ? "text-yellow-500"
+                    : "text-black"
                     }`}
                 >
                   {link.label}
