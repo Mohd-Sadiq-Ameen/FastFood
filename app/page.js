@@ -21,7 +21,7 @@ export default function HomePage() {
         <HomeMenuSection featuredOnly={true} maxItems={6} />
         <DeliveryChecker />
         <WhySection />
-        <Reviews />
+        {/* <Reviews /> */}
         <QRCodeSection />
       </main>
 

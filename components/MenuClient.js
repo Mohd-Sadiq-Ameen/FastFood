@@ -1,101 +1,85 @@
+// components/MenuClient.js
 'use client';
 
 import { useState } from 'react';
-import {
-  categories,
-  getItemsByCategory,
-  getFeaturedItems,
-} from '@/data/menuData';
+import { categories, getItemsByCategory, getFeaturedItems } from '@/data/menuData';
+import Navbar from './Navbar';
 import MenuSidebar from './MenuSidebar';
 import MenuItemCard from './MenuItemCard';
-import Navbar from './Navbar';
 
 export default function MenuClient() {
-  const [active, setActive] = useState('featured');
+  // Default to 'combos' – first category in your menu
+  const [active, setActive] = useState('combos');
 
-  const items =
-    active === 'featured'
-      ? getFeaturedItems()
-      : getItemsByCategory(active);
-
+  const items = active === 'featured' ? getFeaturedItems() : getItemsByCategory(active);
   const activeCat = categories.find((c) => c.id === active);
 
   return (
-
     <>
-    <Navbar/>
-      <section className="bg-zinc-50 py-16">
+      <Navbar />
 
-        <div className="max-w-7xl mx-auto px-5">
-
-          {/* HEADER CONTEXT */}
-          <div className="text-center mb-10">
-
-            <p className="text-yellow-500 uppercase tracking-[0.3em] text-xs font-semibold">
-              🍽️ Fresh Menu
+      <section className="min-h-screen bg-zinc-50 pb-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          {/* HERO */}
+          <div className="pb-8 pt-6 md:pt-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-yellow-500">
+              🍽️ THALA MENU
             </p>
 
-            <h2 className="text-3xl sm:text-5xl font-bold mt-3">
+            <h1 className="mt-3 text-3xl font-black md:text-4xl xl:text-5xl">
               Choose What You Crave
-            </h2>
+            </h1>
 
-            <p className="text-zinc-600 mt-3 max-w-xl mx-auto text-sm">
-              Browse pizzas, burgers, fries, and drinks — all cooked fresh after ordering.
+            <p className="mt-4 max-w-2xl text-zinc-500">
+              Fresh pizzas, burgers, momos, fries and beverages. Everything is cooked only after you
+              place your order.
             </p>
 
+            <div className="mt-5 flex flex-wrap gap-3">
+              <span className="rounded-full border bg-white px-4 py-2 text-sm">⭐ 4.8 Rating</span>
+              <span className="rounded-full border bg-white px-4 py-2 text-sm">🚚 25 mins</span>
+              <span className="rounded-full border bg-white px-4 py-2 text-sm">🔥 Fresh Daily</span>
+            </div>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-10">
-
-            {/* SIDEBAR (sticky feel) */}
-            <div className="md:sticky md:top-24 self-start">
+          {/* MAIN LAYOUT */}
+          <div className="flex flex-col gap-6 lg:flex-row">
+            {/* Sidebar */}
+            <div className="w-full shrink-0 lg:w-72">
               <MenuSidebar active={active} onChange={setActive} />
             </div>
 
-            {/* MAIN AREA */}
+            {/* Products */}
             <div className="flex-1">
+              {/* Category Heading */}
+              {active !== 'featured' && activeCat && (
+                <div className="mb-8">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h2 className="text-2xl font-black md:text-3xl">
+                        {activeCat.emoji} {activeCat.label}
+                      </h2>
+                      <p className="mt-2 text-zinc-500">Freshly prepared after every order</p>
+                    </div>
 
-              {/* CATEGORY CONTEXT BAR */}
-              <div className="mb-6">
-
-                {active === 'featured' ? (
-                  <div className="bg-white border border-zinc-100 rounded-2xl p-4 text-center">
-
-                    <p className="text-sm font-semibold">
-                      🔥 Trending & Most Ordered Items
-                    </p>
-
-                    <p className="text-xs text-zinc-500 mt-1">
-                      Customers love these picks
-                    </p>
-
+                    <div className="hidden gap-2 md:flex">
+                      <span className="rounded-full border bg-white px-3 py-1 text-xs">
+                        🚚 25 mins
+                      </span>
+                      <span className="rounded-full border bg-white px-3 py-1 text-xs">⭐ 4.8</span>
+                    </div>
                   </div>
-                ) : (
-                  <div>
-                    <h3 className="text-2xl sm:text-3xl font-bold">
-                      {activeCat?.emoji} {activeCat?.label}
-                    </h3>
+                </div>
+              )}
 
-                    <p className="text-sm text-zinc-500 mt-1">
-                      Freshly prepared on order
-                    </p>
-                  </div>
-                )}
-
-              </div>
-
-              {/* GRID (feed style) */}
-              <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-
+              {/* Items Grid */}
+              <div className="grid grid-cols-2 gap-4 md:grid-cols-2 md:gap-5 lg:grid-cols-3 lg:gap-6 xl:grid-cols-3">
                 {items.map((item) => (
                   <MenuItemCard key={item.slug} item={item} />
                 ))}
-
               </div>
-
             </div>
           </div>
-
         </div>
       </section>
     </>

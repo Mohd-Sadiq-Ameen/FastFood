@@ -2,74 +2,23 @@
 
 import useCart from '@/hooks/useCart';
 
-
-
 export default function CartButton() {
+  const { totalItems, setOpen } = useCart();
 
-    const {
+  if (totalItems === 0) {
+    return null;
+  }
 
-        totalItems,
-        setOpen
+  return (
+    <button
+      onClick={() => setOpen(true)}
+      className="relative flex h-11 w-11 items-center justify-center rounded-full bg-black text-white shadow-lg transition hover:scale-105 active:scale-95"
+    >
+      <span className="text-xl">🛒</span>
 
-    }
-
-        = useCart();
-
-
-    return (
-
-        <button
-
-
-            onClick={() => setOpen(true)}
-
-
-
-            className='relative'
-
-
-
-        >
-
-            🛒
-
-
-            {totalItems > 0 && (
-
-                <span
-
-
-                    className='absolute
-                    -top-2
-                    -right-2
-
-                    bg-red-500
-
-                    text-white
-
-                    w-5
-                    h-5
-
-                    rounded-full
-
-                    flex
-
-                    items-center
-
-                    justify-center
-
-                    text-xs'
-
-                >
-
-
-                    {totalItems}
-
-
-                </span>
-
-            )}
-
-        </button>
-    );
+      <span className="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full bg-red-500 text-xs font-bold text-white">
+        {totalItems}
+      </span>
+    </button>
+  );
 }

@@ -1,65 +1,23 @@
-"use client";
+'use client';
 
-import PaymentMethod from "./PaymentMethod";
+import PaymentMethod from './PaymentMethod';
 
 export default function CheckoutForm() {
+  return (
+    <div className="rounded-3xl border bg-white p-8 shadow-sm">
+      <h2 className="mb-6 text-2xl font-bold">Delivery Details</h2>
 
+      <div className="space-y-4">
+        <input placeholder="Full Name" className="w-full rounded-xl border p-4" />
 
-return (
+        <input placeholder="Phone Number" className="w-full rounded-xl border p-4" />
 
-<div className="bg-white rounded-3xl p-8 shadow-sm border">
+        <textarea placeholder="Full Address" rows={4} className="w-full rounded-xl border p-4" />
+      </div>
 
-
-<h2 className="text-2xl font-bold mb-6">
-Delivery Details
-</h2>
-
-
-
-
-<div className="space-y-4">
-
-
-<input
-placeholder="Full Name"
-className="w-full border rounded-xl p-4"
-/>
-
-
-<input
-placeholder="Phone Number"
-className="w-full border rounded-xl p-4"
-/>
-
-
-
-<textarea
-
-placeholder="Full Address"
-
-rows={4}
-
-className="w-full border rounded-xl p-4"
-
-/>
-
-
-</div>
-
-
-
-<div className="mt-10">
-
-
-<PaymentMethod/>
-
-</div>
-
-
-
-
-</div>
-
-)
-
+      <div className="mt-10">
+        <PaymentMethod />
+      </div>
+    </div>
+  );
 }

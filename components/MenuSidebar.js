@@ -1,53 +1,82 @@
-'use client'
+'use client';
 
-import { categories } from '@/data/menuData'
+import { categories } from '@/data/menuData';
 
 export default function MenuSidebar({ active, onChange }) {
   return (
-    <aside className="w-full md:w-56 shrink-0">
-      {/* Mobile: horizontal scroll tabs */}
-      <div className="flex md:hidden overflow-x-auto gap-2 pb-2 -mx-4 px-4 scrollbar-hide">
-        {categories.map((cat) => (
-          <button
-            key={cat.id}
-            onClick={() => onChange(cat.id)}
-            className={`flex items-center gap-1.5 whitespace-nowrap px-3.5 py-2 rounded-full text-sm font-dm font-medium transition-all ${
-              active === cat.id
-                ? 'bg-gbgreen text-white shadow-sm'
-                : 'bg-gbgray text-gray-600 hover:bg-gray-200'
-            }`}
-          >
-            <span>{cat.emoji}</span>
-            <span>{cat.label}</span>
-          </button>
-        ))}
-      </div>
+    <aside className="w-full">
+      {/* Mobile */}
 
-      {/* Desktop: vertical list */}
-      <div className="hidden md:block sticky top-24 bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
-        {/* Sidebar header */}
-        <div className="px-4 py-3 border-b border-gray-100 flex items-center gap-2">
-          <span className="w-7 h-7 rounded-full bg-gbgreen flex items-center justify-center text-white font-serif font-extrabold text-sm">G</span>
-          <span className="font-serif font-bold text-sm text-gbblack">Our Menu</span>
-        </div>
-        <ul className="py-2">
-          {categories.map((cat) => (
-            <li key={cat.id}>
+      <div className="md:hidden">
+        <div className="scrollbar-hide flex gap-3 overflow-x-auto pb-3">
+          {categories.map((cat) => {
+            const isActive = active === cat.id;
+
+            return (
               <button
+                key={cat.id}
                 onClick={() => onChange(cat.id)}
-                className={`w-full flex items-center gap-3 px-4 py-3 text-sm font-dm font-medium transition-all text-left ${
-                  active === cat.id
-                    ? 'border-l-4 border-gbgreen bg-green-50 text-gbgreen pl-3'
-                    : 'border-l-4 border-transparent text-gray-600 hover:bg-gbgray hover:text-gbblack'
-                }`}
+                className={`flex shrink-0 items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold transition-all duration-300 ${
+                  isActive
+                    ? 'bg-black text-yellow-400 shadow-md'
+                    : 'border border-zinc-200 bg-white text-zinc-700'
+                } `}
               >
-                <span className="text-xl w-7 text-center">{cat.emoji}</span>
+                <span>{cat.emoji}</span>
+
                 <span>{cat.label}</span>
               </button>
-            </li>
-          ))}
-        </ul>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Tablet */}
+
+      <div className="hidden flex-wrap justify-center gap-3 md:flex lg:hidden">
+        {categories.map((cat) => {
+          const isActive = active === cat.id;
+
+          return (
+            <button
+              key={cat.id}
+              onClick={() => onChange(cat.id)}
+              title={cat.label}
+              className={`flex h-14 w-14 items-center justify-center rounded-2xl text-2xl transition-all duration-300 ${
+                isActive
+                  ? 'bg-black text-yellow-400 shadow-lg'
+                  : 'border border-zinc-200 bg-white hover:border-yellow-400'
+              } `}
+            >
+              {cat.emoji}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Desktop */}
+
+      <div className="hidden flex-wrap justify-center gap-4 lg:flex">
+        {categories.map((cat) => {
+          const isActive = active === cat.id;
+
+          return (
+            <button
+              key={cat.id}
+              onClick={() => onChange(cat.id)}
+              className={`flex items-center gap-3 rounded-2xl px-5 py-3 text-sm font-semibold transition-all duration-300 ${
+                isActive
+                  ? 'bg-black text-yellow-400 shadow-lg'
+                  : 'border border-zinc-200 bg-white text-zinc-700 hover:border-yellow-400'
+              } `}
+            >
+              <span className="text-xl">{cat.emoji}</span>
+
+              <span>{cat.label}</span>
+            </button>
+          );
+        })}
       </div>
     </aside>
-  )
+  );
 }

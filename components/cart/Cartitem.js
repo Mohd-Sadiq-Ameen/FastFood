@@ -1,149 +1,63 @@
 'use client';
 
-
 import Image from 'next/image';
 import useCart from '@/hooks/useCart';
 
-
-
-
-export default function CartItem({
-
-    item
-
-}) {
-
-
-
-    const {
-
-
-        increase,
-        decrease,
-        removeItem
-
-
-    }
-
-        = useCart();
-
-
-
-
-
-    return (
-
-
-        <div
-
-
-            className='flex gap-4 py-4 border-b'
-
-
-        >
-
-
-
-
-            <div className='relative w-20 h-20 rounded-xl overflow-hidden bg-zinc-100'>
-
-
-                <Image
-
-                    src={item.image}
-
-                    fill
-
-                    alt={item.name}
-
-                    className='object-cover'
-
-                />
-
-
-            </div>
-
-
-
-
-
-            <div className='flex-1'>
-
-
-                <h4 className='font-semibold'>
-
-                    {item.name}
-
-                </h4>
-
-
-
-
-                <p>
-
-
-                    ₹{item.price}
-
-                </p>
-
-
-
-
-                <div className='mt-3 flex items-center gap-3'>
-
-
-                    <button
-
-                        onClick={() => decrease(item.slug)}
-
-                    >
-
-                        -
-
-                    </button>
-
-
-
-                    <span>
-
-                        {item.quantity}
-
-                    </span>
-
-
-
-                    <button
-
-                        onClick={() => increase(item.slug)}
-
-                    >
-
-                        +
-
-                    </button>
-
-
-                </div>
-
-
-
-            </div>
-
-
-
-
-            <button
-
-                onClick={() => removeItem(item.slug)}
-
-            >
-
-                ✕
-            </button>
-
-
-
+export default function CartItem({ item }) {
+  const { increase, decrease, removeItem } = useCart();
+
+  return (
+    <div className="flex gap-4 border-b border-zinc-100 py-5">
+      {/* IMAGE */}
+
+      <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-2xl bg-zinc-100">
+        <Image src={item.image} alt={item.name} fill sizes="96px" className="object-cover" />
+      </div>
+
+      {/* CONTENT */}
+
+      <div className="flex flex-1 flex-col">
+        <div className="flex justify-between">
+          <div>
+            <h3 className="font-bold text-zinc-900">{item.name}</h3>
+
+            <p className="mt-1 text-sm text-zinc-500">₹{item.price}</p>
+          </div>
+
+          <button
+            onClick={() => removeItem(item.slug)}
+            className="text-zinc-400 hover:text-red-500"
+          >
+            ✕
+          </button>
         </div>
 
-    );
+        {/* QUANTITY */}
+
+        <div className="mt-4 flex items-center gap-3">
+          <button
+            onClick={() => decrease(item.slug)}
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-zinc-300 bg-white hover:bg-zinc-100"
+          >
+            −
+          </button>
+
+          <span className="min-w-[20px] text-center font-bold">{item.quantity}</span>
+
+          <button
+            onClick={() => increase(item.slug)}
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-black text-white hover:bg-zinc-800"
+          >
+            +
+          </button>
+        </div>
+
+        {/* SUBTOTAL */}
+
+        <div className="mt-3">
+          <span className="font-semibold">₹{item.price * item.quantity}</span>
+        </div>
+      </div>
+    </div>
+  );
 }

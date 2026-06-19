@@ -1,82 +1,102 @@
-import Link from "next/link";
+'use client';
 
-export default function SuccessPage(){
+import Link from 'next/link';
 
+export default function SuccessPage() {
+  // Temporary demo message
+  // Later we'll build this dynamically
 
-return(
+  const message = `🍕 *THALA CAFE ORDER*
 
+━━━━━━━━━━━━━━
 
-<section className="min-h-screen flex items-center justify-center bg-zinc-50">
+Payment : PAID ✅
 
-
-
-<div className="bg-white p-10 rounded-3xl shadow-xl text-center max-w-md">
-
-
-
-<div className="text-6xl mb-5">
-
-✅
-
-</div>
+Payment ID
+pay_demo12345
 
 
+Customer
+Mohd Sadiq
 
 
-<h1 className="text-3xl font-black">
+Phone
+8700629458
 
 
-Payment Successful
+Address
+S53/112 Gandhi Camp
+Sriniwaspuri
+Delhi
 
 
-</h1>
+Items
+
+1 × Margherita Pizza
+₹199
 
 
-
-<p className="text-zinc-500 mt-3">
-
-
-Thank you for ordering from
-
-Thala Cafe.
+1 × BBQ Chicken Pizza
+₹329
 
 
-</p>
+━━━━━━━━━━━━━━
+
+Total : ₹528
 
 
+Please confirm my order 🙏`;
 
+  const whatsappUrl = `https://wa.me/918707515005?text=${encodeURIComponent(message)}`;
 
+  return (
+    <section className="flex min-h-screen items-center justify-center bg-zinc-50 px-5">
+      <div className="w-full max-w-lg rounded-3xl bg-white p-8 shadow-xl">
+        {/* Icon */}
 
-<Link
+        <div className="text-center">
+          <div className="mb-5 text-6xl">✅</div>
 
+          <h1 className="text-3xl font-black text-black">Payment Successful</h1>
 
-href="/"
+          <p className="mt-3 text-zinc-500">
+            Thank you for ordering from
+            <span className="font-semibold text-black"> THALA CAFE</span>
+          </p>
 
+          <p className="mt-2 text-sm text-zinc-400">Your payment has been received successfully.</p>
+        </div>
 
+        {/* Next Step */}
 
-className="mt-6 inline-block bg-black text-yellow-400 px-6 py-3 rounded-full font-bold"
+        <div className="mt-8 rounded-2xl border border-yellow-200 bg-yellow-50 p-4">
+          <h3 className="font-bold">Next Step</h3>
 
+          <p className="mt-2 text-sm text-zinc-600">
+            Send your order details to the restaurant so we can prepare your food immediately.
+          </p>
+        </div>
 
->
+        {/* WhatsApp */}
 
+        <a
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-6 block w-full rounded-full bg-green-500 py-4 text-center font-bold text-white transition hover:bg-green-600"
+        >
+          📲 Send Order To Restaurant
+        </a>
 
-Back Home
+        {/* Home */}
 
-
-</Link>
-
-
-
-
-
-</div>
-
-
-</section>
-
-
-)
-
-
-
+        <Link
+          href="/"
+          className="mt-4 block w-full rounded-full bg-black py-4 text-center font-bold text-yellow-400"
+        >
+          Back Home
+        </Link>
+      </div>
+    </section>
+  );
 }

@@ -1,136 +1,56 @@
-import crypto from "crypto";
-import { NextResponse } from "next/server";
+import crypto from 'crypto';
+import { NextResponse } from 'next/server';
 
+export async function POST(req) {
+  try {
+    const body = await req.json();
 
+    const {
+      razorpay_order_id,
 
-export async function POST(req){
+      razorpay_payment_id,
 
-try{
+      razorpay_signature,
+    } = body;
 
+    const generatedSignature = crypto
 
-const body = await req.json();
+      .createHmac(
+        'sha256',
 
+        process.env.RAZORPAY_KEY_SECRET
+      )
 
+      .update(`${razorpay_order_id}|${razorpay_payment_id}`)
 
-const{
+      .digest('hex');
 
-razorpay_order_id,
+    const isAuthentic = generatedSignature === razorpay_signature;
 
-razorpay_payment_id,
+    if (isAuthentic) {
+      return NextResponse.json({
+        success: true,
+      });
+    }
 
-razorpay_signature
+    return NextResponse.json(
+      {
+        success: false,
+      },
 
+      {
+        status: 400,
+      }
+    );
+  } catch (err) {
+    return NextResponse.json(
+      {
+        error: err.message,
+      },
+
+      {
+        status: 500,
+      }
+    );
+  }
 }
-
-=body;
-
-
-
-
-
-
-const generatedSignature = crypto
-
-
-.createHmac(
-
-"sha256",
-
-process.env.RAZORPAY_KEY_SECRET
-
-)
-
-
-
-.update(
-
-`${razorpay_order_id}|${razorpay_payment_id}`
-
-)
-
-
-
-.digest("hex");
-
-
-
-
-
-
-const isAuthentic =
-
-generatedSignature===razorpay_signature;
-
-
-
-
-
-
-if(isAuthentic){
-
-return NextResponse.json({
-
-success:true
-
-});
-
-
-}
-
-
-
-
-
-return NextResponse.json(
-
-
-{
-
-success:false
-
-},
-
-{
-
-status:400
-
-}
-
-
-);
-
-
-
-
-
-
-}
-
-
-catch(err){
-
-
-return NextResponse.json(
-
-
-{
-
-error:err.message
-
-},
-
-{
-
-status:500
-
-}
-
-
-);
-
-
-}
-
-
-}
-
