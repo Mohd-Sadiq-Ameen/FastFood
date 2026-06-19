@@ -1,10 +1,10 @@
+// components/QRCodeSection.js
 'use client';
 
 import Image from 'next/image';
 import { useState } from 'react';
 
 export default function QRCodeSection({ isPage = false }) {
-  const [copiedUpi, setCopiedUpi] = useState(false);
   const [copiedNumber, setCopiedNumber] = useState(false);
 
   const [form, setForm] = useState({
@@ -16,12 +16,6 @@ export default function QRCodeSection({ isPage = false }) {
 
   const phoneNumber = '918707515005';
   const mobileForPayment = '8707515005';
-
-  const copyUpiId = () => {
-    navigator.clipboard.writeText(upiId);
-    setCopiedUpi(true);
-    setTimeout(() => setCopiedUpi(false), 1500);
-  };
 
   const copyMobileNumber = () => {
     navigator.clipboard.writeText(mobileForPayment);
@@ -61,34 +55,29 @@ Payment via UPI. Will send screenshot after payment.
         <div className="mb-10 text-center">
           <h2 className="text-3xl font-bold sm:text-4xl">Pay & Order in Seconds</h2>
           <p className="mx-auto mt-2 max-w-xl text-sm text-zinc-500">
-            Scan QR, use UPI, or place order directly via WhatsApp.
+            Scan QR, pay via mobile number, or place order directly via WhatsApp.
           </p>
         </div>
 
         <div className="grid gap-10 lg:grid-cols-2">
           {/* LEFT - PAYMENT OPTIONS */}
           <div className="space-y-6">
-            {/* QR CARD (PRIMARY) */}
-            <div className="rounded-2xl border border-zinc-100 bg-white p-6 text-center shadow-sm">
-              <h3 className="mb-4 font-semibold">Scan & Pay</h3>
-
-              <div className="relative mx-auto h-52 w-52">
+            {/* QR CARD */}
+            <div className="rounded-2xl border border-zinc-100 bg-white p-4 text-center shadow-sm">
+              <h3 className="mb-2 font-semibold">Scan & Pay</h3>
+              <div className="relative mx-auto h-96 w-72 sm:h-72 sm:w-72">
                 <Image src="/qr.png" alt="QR Code" fill className="object-contain" />
               </div>
-
               <p className="mt-3 text-xs text-zinc-500">Google Pay • PhonePe • Paytm</p>
             </div>
 
-            {/* UPI + MOBILE (SECONDARY GRID) */}
-            <div className="grid gap-4 sm:grid-cols-2">
-
-              <div className="rounded-2xl border border-zinc-100 bg-white p-4">
-                <p className="text-sm font-semibold">Mobile Pay</p>
-                <p className="mt-1 text-xs text-zinc-500">{mobileForPayment}</p>
-                <button onClick={copyMobileNumber} className="mt-2 text-xs text-green-600">
-                  {copiedNumber ? '✓ Copied' : 'Copy'}
-                </button>
-              </div>
+            {/* Mobile Number – copy */}
+            <div className="rounded-2xl border border-zinc-100 bg-white p-4 text-center shadow-sm">
+              <p className="text-sm font-semibold">📱 Pay to Mobile Number</p>
+              <p className="mt-1 font-mono text-lg font-bold">{mobileForPayment}</p>
+              <button onClick={copyMobileNumber} className="mt-2 text-xs text-green-600">
+                {copiedNumber ? '✓ Copied' : 'Copy Number'}
+              </button>
             </div>
           </div>
 
