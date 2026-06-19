@@ -1,6 +1,6 @@
 export default function WhatsAppOrderButton({ itemName, price }) {
   const msg = encodeURIComponent(
-    `🍽️ *New Order from GreenBite*\n\n📦 *Ordered:* ${itemName}\n💰 *Amount to Pay:* ₹${price}\n\nPlease confirm my order! I'll share my delivery address. 🙏`
+    `🍽️ *New Order from Thalatha Cafe*\n\n📦 *Ordered:* ${itemName}\n💰 *Amount to Pay:* ₹${price}\n\nPlease confirm my order! I'll share my delivery address. 🙏`
   )
   const url = `https://wa.me/918700629458?text=${msg}`
 

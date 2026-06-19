@@ -18,10 +18,10 @@ const syne = Syne({
 });
 
 export const metadata = {
-  title: 'GreenBite | Fresh Pizza, Burgers & Ice Cold Catch Cola – Delivered Fast',
+  title: 'Thalatha Cafe',
 
   description:
-    'Order premium pizza, juicy burgers and Catch Cola drinks online. Fast delivery and WhatsApp ordering in Delhi.',
+    'Fresh pizzas, burgers, momos and beverages. Delivered hot and prepared fresh on every order.',
 };
 
 export default function RootLayout({ children }) {

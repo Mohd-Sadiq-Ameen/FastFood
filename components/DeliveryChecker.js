@@ -51,7 +51,7 @@ export default function DeliveryChecker() {
   };
 
   const whatsappNumber = '918700629458';
-  const whatsappMessage = encodeURIComponent(`Hi GreenBite! I live in "${query}". Do you deliver here? Please confirm.`);
+  const whatsappMessage = encodeURIComponent(`Hi Thalatha Cafe! I live in "${query}". Do you deliver here? Please confirm.`);
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
   return (

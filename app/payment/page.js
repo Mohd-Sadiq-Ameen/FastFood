@@ -1,7 +1,7 @@
 import QRCodeSection from '@/components/QRCodeSection';
 
 export const metadata = {
-    title: 'Easy Payment – GreenBite',
+    title: 'Easy Payment – Thalatha Cafe',
     description: 'Pay via UPI QR code. Scan, pay, and confirm your order on WhatsApp.',
 };
 

@@ -1,4 +1,4 @@
-# GreenBite 🟢
+# Thalatha Cafe 🟢
 
 > Fresh. Fast. Flavourful. — A premium fast food ordering website for Delhi.
 
@@ -32,7 +32,7 @@ npm start
 All "Order Now" buttons open WhatsApp at `+91 87006 29458` with a pre-filled message:
 
 ```
-🍽️ New Order from GreenBite
+🍽️ New Order from Thalatha Cafe
 
 📦 Ordered: [Item Name]
 💰 Amount to Pay: ₹[Price]
