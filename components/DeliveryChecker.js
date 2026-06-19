@@ -50,7 +50,7 @@ export default function DeliveryChecker() {
     setResult(matchedArea ? { available: true, area: matchedArea } : { available: false, query: query.trim() });
   };
 
-  const whatsappNumber = '918700629458';
+  const whatsappNumber = '918707515005';
   const whatsappMessage = encodeURIComponent(`Hi Thalatha Cafe! I live in "${query}". Do you deliver here? Please confirm.`);
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 

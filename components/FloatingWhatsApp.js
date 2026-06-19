@@ -2,7 +2,7 @@
 'use client';
 
 export default function FloatingWhatsApp() {
-  const phoneNumber = '918700629458';
+  const phoneNumber = '918707515005';
   const message = encodeURIComponent(
     'Hi Thalatha Cafe! I want to place an order.'
   );

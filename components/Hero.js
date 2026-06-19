@@ -47,7 +47,7 @@ export default function Hero() {
           </Link>
 
           <a
-            href="https://wa.me/918700629458?text=Hi%20Thala%20Cafe!%20I%20want%20to%20place%20an%20order"
+            href="https://wa.me/918707515005?text=Hi%20Thala%20Cafe!%20I%20want%20to%20place%20an%20order"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full border-2 border-black px-6 py-3 text-center font-bold transition hover:bg-black hover:text-white sm:px-8 sm:py-4"
