@@ -7,7 +7,7 @@ import MenuSidebar from './MenuSidebar';
 import MenuItemCard from './MenuItemCard';
 
 export default function HomeMenuSection() {
-  const [active, setActive] = useState('pizza');
+  const [active, setActive] = useState('combos');
 
   const items = active === 'featured' ? getFeaturedItems() : getItemsByCategory(active);
   const activeCat = categories.find((c) => c.id === active);
